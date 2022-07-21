@@ -19,6 +19,7 @@ class AppColors {
   static const Color signuptextColor = Color(0xff5EE6FF);
   static const Color mainphototextColor = Color(0xff58FFC3);
   static const Color deletetextColor = Color(0xffFF5858);
+  static const Color orwithtextColor = Color(0xff9B9B9B);
 
 
 

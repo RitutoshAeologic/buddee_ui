@@ -29,14 +29,14 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           useInheritedMediaQuery: true,
           home: //OnBoardScreen(),
-         // SignInScreen(),
+          SignInScreen(),
         // SignUpAbout(),
           //AddHobbies(),
           //SignUp(),
           //SaveHobbie(),
          //AddNewHobbie(),
           // AddedHobbies()
-          EditAddPhoto()
+         // EditAddPhoto()
         );
       },
     );
