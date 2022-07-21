@@ -102,7 +102,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   TextButton(
                     child:  Text(
                       AppStrings.lcsignUpText,
-                      style: AppTextStyle.text7
+                      style: AppTextStyle.text7,
                     ),
                     onPressed: () {
                       //signup screen

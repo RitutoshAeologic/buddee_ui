@@ -85,7 +85,8 @@ class AppTextStyle {
       fontSize: 12,
       fontWeight: FontWeight.w500,
       fontFamily: 'Poppins',
-    color: AppColors.signuptextColor
+    color: AppColors.signuptextColor,
+    decoration: TextDecoration.underline
   );
   static TextStyle maniPhototext = const TextStyle(
       fontSize: 12,
