@@ -7,38 +7,47 @@ import 'colors.dart';
 
 class AppTextStyle {
   static TextStyle text1 =  const TextStyle(
-
-      color: AppColors.Onboardsubtitle,
       fontWeight: FontWeight.w500,
       fontSize: 20,
-      fontFamily: 'Poppins'
-
+      fontFamily: 'PoppinsR',
+      color: AppColors.Onboardsubtitle,
+    fontStyle: FontStyle.normal
   );
 
   static TextStyle materialwidget = const TextStyle(
       fontWeight: FontWeight.w600,
       color: AppColors.white,
       fontSize: 20,
-      fontFamily: 'Poppins');
+      fontFamily: 'PoppinsR',
+    fontStyle: FontStyle.normal
+  );
   //
   static TextStyle text2 = const TextStyle(
       fontWeight: FontWeight.w600,
       color: AppColors.signInColor,
       fontSize: 20,
-      fontFamily: 'Poppins');
+      fontFamily: 'PoppinsR');
 
   static TextStyle helloAgaintext = const TextStyle(
   fontSize: 40,
   fontWeight: FontWeight.w500,
       fontFamily: 'Poppins',
-      color: AppColors.textblueColor
+      color: AppColors.textblueColor,
+  );
+
+ static TextStyle forgetyourpasswordtext = const  TextStyle(
+  fontWeight: FontWeight.w400,
+  fontSize: 12,
+  decoration: TextDecoration.underline,
+   color: AppColors.greyTextColor
   );
 
   static TextStyle signInAccount = const TextStyle(
       fontSize: 14,
       fontWeight: FontWeight.w400,
       fontFamily: 'Poppins',
-    color: AppColors.lightgreyTextColor
+    color: AppColors.lightgreyTextColor,
+
   );
 
 

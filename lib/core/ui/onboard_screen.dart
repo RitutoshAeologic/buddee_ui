@@ -56,7 +56,7 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
           ),
           SizedBox(height: ScreenUtil().setHeight(29),),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15),
+            padding: EdgeInsets.symmetric(horizontal: 32),
             child: MaterialButtonBox(title: AppStrings.createAccountText,
                 onTap: (){}),
           ),

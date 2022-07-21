@@ -28,9 +28,9 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           useInheritedMediaQuery: true,
-          home: //OnBoardScreen(),
-          SignInScreen(),
-        // SignUpAbout(),
+          home: OnBoardScreen(),
+         // SignInScreen(),
+        //SignUpAbout(),
           //AddHobbies(),
           //SignUp(),
           //SaveHobbie(),

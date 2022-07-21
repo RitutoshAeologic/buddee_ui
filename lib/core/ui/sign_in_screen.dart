@@ -41,7 +41,7 @@ class _SignInScreenState extends State<SignInScreen> {
             children: [
               SizedBox(height: ScreenUtil().setHeight(10),),
               Center(
-                child: Text(AppStrings.helloAgainText,style: AppTextStyle.helloAgaintext ),
+                child: Text(AppStrings.helloAgainText ,style: AppTextStyle.helloAgaintext ),
               ),
               SizedBox(height: ScreenUtil().setHeight(8),),
               Center(
@@ -65,11 +65,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       Navigator.pushNamed(context, "myRoute");
                     },
                     child:  Text(AppStrings.forgetPasswordText,
-                      style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 12,
-                        decoration: TextDecoration.underline
-                      ),
+                      style: AppTextStyle.forgetyourpasswordtext
                     ),
                     )
               ],),

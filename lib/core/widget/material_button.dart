@@ -18,7 +18,7 @@ class MaterialButtonBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return
       Container(
-        height: ScreenUtil().setHeight(58),
+        height: ScreenUtil().setHeight(50),
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
@@ -33,22 +33,22 @@ class MaterialButtonBox extends StatelessWidget {
             boxShadow: [
               BoxShadow(
                 color: AppColors.materialshadowColor,
-                spreadRadius: 2,
-                blurRadius: 10,
-                offset: Offset(0, 3),
+                spreadRadius: 1,
+                blurRadius: 2,
+                offset: Offset(0,1),
               )
             ]
         ),
         child: MaterialButton(
          // color: Colors.deepOrangeAccent,
           onPressed: onTap,
-          height: ScreenUtil().setHeight(58),
+         // height: ScreenUtil().setHeight(48),
           minWidth: MediaQuery.of(context).size.width,
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(40)),
           child:
               Text(title,
-                textAlign: TextAlign.center,
+               // textAlign: TextAlign.center,
                 style: AppTextStyle.materialwidget
               )
         ),

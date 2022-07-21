@@ -18,7 +18,7 @@ class TextButtonBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return  TextButton(onPressed: onTap,
       style: ButtonStyle(
-          side: MaterialStateProperty.all(BorderSide(color: AppColors.black)),
+          side: MaterialStateProperty.all(BorderSide(color: AppColors.black,width: 2)),
           backgroundColor: MaterialStateProperty.all(AppColors.white),
           foregroundColor: MaterialStateProperty.all(AppColors.black),
           minimumSize:  MaterialStateProperty.all(Size(double.infinity, 58)),
