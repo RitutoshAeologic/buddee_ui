@@ -8,6 +8,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'core/ui/add_hobbies.dart';
+import 'core/ui/add_photo.dart';
+import 'core/ui/added_hobby_list.dart';
+import 'core/ui/edit_add_photo.dart';
 
 
 
@@ -19,20 +22,21 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    //Set the fit size (Find your UI design, look at the dimensions of the device screen and fill it in,unit in dp)
-    return ScreenUtilInit(
+     return ScreenUtilInit(
       designSize: Size(360, 690),
       builder: (_,a){
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           useInheritedMediaQuery: true,
           home: //OnBoardScreen(),
-          //SignInScreen(),
-         //SignUpAbout(),
-          AddHobbies()
+         // SignInScreen(),
+        // SignUpAbout(),
+          //AddHobbies(),
           //SignUp(),
           //SaveHobbie(),
-         // AddNewHobbie(),
+         //AddNewHobbie(),
+          // AddedHobbies()
+          EditAddPhoto()
         );
       },
     );

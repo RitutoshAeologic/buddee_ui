@@ -28,9 +28,13 @@ class _SignUpAboutState extends State<SignUpAbout> {
   Widget build(BuildContext context) {
     return
       Scaffold(
-        appBar: AppBar(
+        appBar:
+        AppBar(
           elevation: 0,
-          leading: Icon(Icons.arrow_back_ios,color: AppColors.black,),
+          leading: Padding(
+            padding:  EdgeInsets.only(left: 25.06,),
+            child: Icon(Icons.arrow_back_ios,color: AppColors.black,),
+          ),
           backgroundColor: AppColors.white,
         ),
         ///Bottom Navigation Bar
@@ -49,24 +53,24 @@ class _SignUpAboutState extends State<SignUpAbout> {
     // BottomNavigationBarItem(icon: SvgPicture.asset(AppIcons.user),label: ""),
     // ],),
       body:  Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20,
+        padding: EdgeInsets.symmetric(horizontal: 32,
             vertical: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: ScreenUtil().setHeight(15),),
+            SizedBox(height: ScreenUtil().setHeight(28),),
             Center(child: Text(AppStrings.tellUsText,style: AppTextStyle.text8)),
-            SizedBox(height: ScreenUtil().setHeight(40),),
+            SizedBox(height: ScreenUtil().setHeight(29),),
             Text(AppStrings.nameText,style: AppTextStyle.text3 ),
-            SizedBox(height: ScreenUtil().setHeight(10),),
+            SizedBox(height: ScreenUtil().setHeight(8),),
             GetTextField(hint: AppStrings.nameText, obscure: false,),
-            SizedBox(height: ScreenUtil().setHeight(25),),
+            SizedBox(height: ScreenUtil().setHeight(21),),
             Text(AppStrings.dobText,style:AppTextStyle.text3 ),
-            SizedBox(height: ScreenUtil().setHeight(10),),
+            SizedBox(height: ScreenUtil().setHeight(8),),
             GetTextField(hint: AppStrings.dobText , obscure: false,),
-            SizedBox(height: ScreenUtil().setHeight(25),),
+            SizedBox(height: ScreenUtil().setHeight(21),),
             Text(AppStrings.genderText, style: AppTextStyle.text3, ),
-            SizedBox(height: ScreenUtil().setHeight(10),),
+            SizedBox(height: ScreenUtil().setHeight(8),),
             Container(
               height: ScreenUtil().setHeight(60),
               padding: EdgeInsets.all(4),
@@ -83,7 +87,7 @@ class _SignUpAboutState extends State<SignUpAbout> {
               child:
                 ToggleSwitch(
                   minHeight: ScreenUtil().setHeight(50),
-                  minWidth: ScreenUtil().setWidth(150),
+                  minWidth: ScreenUtil().setWidth(143),
                   cornerRadius: (10),
                   radiusStyle: true,
                   fontSize: 16.sp,
@@ -149,8 +153,8 @@ class _SignUpAboutState extends State<SignUpAbout> {
               // ),
             ),
             /// Check Height issue,over
-            SizedBox(height: MediaQuery.of(context).size.width*0.4,),
-            PlainMaterialButtonBox(title: AppStrings.nextText, onTap: (){}),
+            SizedBox(height: ScreenUtil().setHeight(175)),
+            MaterialButtonBox(title: AppStrings.nextText, onTap: (){}),
           ],
         ),
       ),

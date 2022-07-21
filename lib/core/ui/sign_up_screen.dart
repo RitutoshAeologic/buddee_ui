@@ -24,42 +24,46 @@ class _SignUpState extends State<SignUp> {
   Widget build(BuildContext context) {
     return  Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
+      appBar:
+      AppBar(
         elevation: 0,
-        leading: Icon(Icons.arrow_back_ios,color: AppColors.black,),
+        leading: Padding(
+          padding:  EdgeInsets.only(left: 25.06,),
+          child: Icon(Icons.arrow_back_ios,color: AppColors.black,),
+        ),
         backgroundColor: AppColors.white,
       ),
       body: SingleChildScrollView(
           child:
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20,),
+            padding: EdgeInsets.symmetric(horizontal: 32,),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: ScreenUtil().setHeight(10),),
+                SizedBox(height: ScreenUtil().setHeight(24),),
                 Center(
                   child: Text(AppStrings.helloText,style: AppTextStyle.helloAgaintext ),
                 ),
-                SizedBox(height: ScreenUtil().setHeight(10),),
+                SizedBox(height: ScreenUtil().setHeight(20),),
                 Center(
                   child: Text(
                       AppStrings.createYourAccountText,style:AppTextStyle.signInAccount ),
                 ),
-                SizedBox(height: ScreenUtil().setHeight(35),),
+                SizedBox(height: ScreenUtil().setHeight(39),),
                 Text(AppStrings.emailAddressText,style: AppTextStyle.text3 ),
                 SizedBox(height: ScreenUtil().setHeight(8),),
                 GrayGetTextField(hint: AppStrings.demoEmailText, obscure: false,),
-                SizedBox(height: ScreenUtil().setHeight(18),),
+                SizedBox(height: ScreenUtil().setHeight(21),),
                 Text(AppStrings.passwordText,style:AppTextStyle.text3 ),
                 SizedBox(height: ScreenUtil().setHeight(8),),
                 GrayGetTextField(hint: AppStrings.enterPasswordText , obscure: true,),
-                SizedBox(height: ScreenUtil().setHeight(18),),
+                SizedBox(height: ScreenUtil().setHeight(21),),
                 Text(AppStrings.confirmpasswordText,style:AppTextStyle.text3 ),
                 SizedBox(height: ScreenUtil().setHeight(8),),
                 GrayGetTextField(hint: AppStrings.confirmpasswordText , obscure: true,),
-                SizedBox(height: ScreenUtil().setHeight(18)),
+                SizedBox(height: ScreenUtil().setHeight(24)),
                 MaterialButtonBox(title: AppStrings.signUpText, onTap: (){}),
-                SizedBox(height: ScreenUtil().setHeight(20),),
+                SizedBox(height: ScreenUtil().setHeight(24),),
                 //  Divider(thickness:2,color: Colors.grey,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -73,9 +77,9 @@ class _SignUpState extends State<SignUp> {
                     ),
                   ],
                 ),
-                SizedBox(height: ScreenUtil().setHeight(20),),
+                SizedBox(height: ScreenUtil().setHeight(24),),
                 TextButtonBox(title: AppStrings.googleSignInText, onTap: (){}, icon: AppIcons.google),
-                SizedBox(height: ScreenUtil().setHeight(12),),
+                SizedBox(height: ScreenUtil().setHeight(16),),
                 TextButtonBox(title: AppStrings.facebookSignInText, onTap: (){}, icon: AppIcons.fb),
                 Row(
                   children: <Widget>[

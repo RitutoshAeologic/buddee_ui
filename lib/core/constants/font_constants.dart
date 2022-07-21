@@ -3,9 +3,10 @@ class AppStrings {
   static const String helloText                        = 'Hello!';
   static const String helloAgainText                   = 'Hello Again!';
   static const String singInAccountText                = 'Sign in to your account';
-  static const String onBoardTitleText                 = 'Whatever Your hobby, \n find your Buddee';
+  static const String onBoardTitleText                 = 'Whatever Your hobby, \n find a Buddee';
   static const String signInTitleText                  = 'SIGN IN';
   static const String signUpText                       = 'SIGN UP';
+  static const String lcsignUpText                       = 'Sign up';
   static const String createYourAccountText            = 'Create your account';
   static const String createAccountText                = 'CREATE ACCOUNT';
   static const String emailAddressText                 = 'Email address';
@@ -33,6 +34,10 @@ class AppStrings {
   static const String saveText                         = 'SAVE';
   static const String addnewhobbyText                  = '+ ADD NEW HOBBY';
   static const String nextstepText                     = 'NEXT STEP';
+  static const String addphotosText                     = 'Add photos';
+  static const String addphotoText                     = 'Add photo';
+  static const String deleteText                     = 'Delete';
+  static const String mainphotoText                     = 'Main photo';
 
 }
 

@@ -20,24 +20,29 @@ class AddNewHobbie extends StatefulWidget {
 class _AddNewHobbieState extends State<AddNewHobbie> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
+    return
+      Scaffold(
+      appBar:
+      AppBar(
         elevation: 0,
-        leading: Icon(Icons.arrow_back_ios,color: AppColors.black,),
+        leading: Padding(
+          padding:  EdgeInsets.only(left: 25.06,),
+          child: Icon(Icons.arrow_back_ios,color: AppColors.black,),
+        ),
         backgroundColor: AppColors.white,
       ),
       body:
       Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20,
+        padding: EdgeInsets.only(left: 16,right: 18
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: ScreenUtil().setHeight(15),),
+            SizedBox(height: ScreenUtil().setHeight(28),),
             Center(child: Text(AppStrings.addHobbies,style: AppTextStyle.blueboldtext )),
-            SizedBox(height: ScreenUtil().setHeight(35),),
+            SizedBox(height: ScreenUtil().setHeight(36),),
             Center(child: Text('You have 1 hobby',style: AppTextStyle.text9,)),
-            SizedBox(height: ScreenUtil().setHeight(15),),
+            SizedBox(height: ScreenUtil().setHeight(24),),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -57,11 +62,11 @@ class _AddNewHobbieState extends State<AddNewHobbie> {
 
                   ),
                   child:Padding(
-                    padding: const EdgeInsets.only(left: 10,top:5),
+                    padding: const EdgeInsets.only(left: 10,top:9),
                     child: Text('Badminton', style: AppTextStyle.text10,),
                   ),
                 ),
-                SizedBox(width: ScreenUtil().setWidth(89),),
+                SizedBox(width: ScreenUtil().setWidth(88),),
                 IconButton(onPressed: (){}, icon: SvgPicture.asset(AppIcons.edit)),
                 IconButton(onPressed: (){}, icon: SvgPicture.asset(AppIcons.delete)),
               ],
@@ -94,10 +99,16 @@ class _AddNewHobbieState extends State<AddNewHobbie> {
             //     ),
             //   ),
             // ),
-            SizedBox(height: ScreenUtil().setHeight(220),),
-            PlainMaterialButtonBox(title: AppStrings.addnewhobbyText, onTap: (){}),
+            SizedBox(height: ScreenUtil().setHeight(210),),
+            Padding(
+              padding: const EdgeInsets.only(left: 16.0,right: 14),
+              child: PlainMaterialButtonBox(title: AppStrings.addnewhobbyText, onTap: (){}),
+            ),
             SizedBox(height: ScreenUtil().setHeight(15),),
-            MaterialButtonBox(title: AppStrings.nextstepText, onTap: (){})
+            Padding(
+              padding: const EdgeInsets.only(left:16.0,right: 14),
+              child: MaterialButtonBox(title: AppStrings.nextstepText, onTap: (){}),
+            )
 
           ],
         ),

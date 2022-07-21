@@ -22,9 +22,13 @@ class _SaveHobbieState extends State<SaveHobbie> {
   Widget build(BuildContext context) {
     return
       Scaffold(
-      appBar: AppBar(
+      appBar:
+      AppBar(
         elevation: 0,
-        leading: Icon(Icons.arrow_back_ios,color: AppColors.black,),
+        leading: Padding(
+          padding:  EdgeInsets.only(left: 25.06,),
+          child: Icon(Icons.arrow_back_ios,color: AppColors.black,),
+        ),
         backgroundColor: AppColors.white,
       ),
       body:
@@ -34,11 +38,11 @@ class _SaveHobbieState extends State<SaveHobbie> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: ScreenUtil().setHeight(15),),
+            SizedBox(height: ScreenUtil().setHeight(28),),
             Center(child: Text(AppStrings.addHobbies,style: AppTextStyle.blueboldtext )),
-            SizedBox(height: ScreenUtil().setHeight(35),),
+            SizedBox(height: ScreenUtil().setHeight(29),),
             Text(AppStrings.searchText,style: AppTextStyle.lightbluetext ),
-            SizedBox(height: ScreenUtil().setHeight(10),),
+            SizedBox(height: ScreenUtil().setHeight(8),),
             TextField(
               decoration: InputDecoration(
                 border: OutlineInputBorder(
@@ -57,7 +61,7 @@ class _SaveHobbieState extends State<SaveHobbie> {
                 contentPadding: EdgeInsets.symmetric(horizontal: 16.w,vertical: 14.h),
               ),
             ),
-            SizedBox(height: ScreenUtil().setHeight(15),),
+            SizedBox(height: ScreenUtil().setHeight(28),),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -77,16 +81,16 @@ class _SaveHobbieState extends State<SaveHobbie> {
 
                         ),
                         child:Padding(
-                          padding: const EdgeInsets.only(left: 10,top:5),
+                          padding: const EdgeInsets.only(left: 9,top:9),
                           child: Text('Badminton', style: AppTextStyle.text10,),
                         ),
                       ),
                 IconButton(onPressed: (){}, icon: SvgPicture.asset(AppIcons.delete))
               ],
             ),
-            SizedBox(height: ScreenUtil().setHeight(20),),
+            SizedBox(height: ScreenUtil().setHeight(32),),
             Text(AppStrings.lookingText,style: AppTextStyle.lightbluetext,),
-      SizedBox(height: ScreenUtil().setHeight(15),),
+      SizedBox(height: ScreenUtil().setHeight(8),),
       Container(
         height: ScreenUtil().setHeight(114),
         width: ScreenUtil().setWidth(343),
@@ -110,7 +114,7 @@ class _SaveHobbieState extends State<SaveHobbie> {
         ),
       ),
 
-            SizedBox(height: ScreenUtil().setHeight(130),),
+            SizedBox(height: ScreenUtil().setHeight(161),),
             MaterialButtonBox(title: AppStrings.saveText, onTap: (){})
 
           ],

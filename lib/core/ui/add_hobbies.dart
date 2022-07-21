@@ -25,23 +25,26 @@ class _AddHobbiesState extends State<AddHobbies> {
   Widget build(BuildContext context) {
     return
       Scaffold(
-      appBar: AppBar(
+      appBar:
+      AppBar(
         elevation: 0,
-        leading: Icon(Icons.arrow_back_ios,color: AppColors.black,),
+        leading: Padding(
+          padding:  EdgeInsets.only(left: 25.06,),
+          child: Icon(Icons.arrow_back_ios,color: AppColors.black,),
+        ),
         backgroundColor: AppColors.white,
       ),
       body:
       Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20,
-            vertical: 10),
+        padding: EdgeInsets.symmetric(horizontal: 32,),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: ScreenUtil().setHeight(15),),
+            SizedBox(height: ScreenUtil().setHeight(31.07),),
             Center(child: Text(AppStrings.addHobbies,style: AppTextStyle.blueboldtext )),
-            SizedBox(height: ScreenUtil().setHeight(40),),
+            SizedBox(height: ScreenUtil().setHeight(21),),
             Text(AppStrings.searchText,style: AppTextStyle.text3 ),
-            SizedBox(height: ScreenUtil().setHeight(10),),
+            SizedBox(height: ScreenUtil().setHeight(8),),
             TextField(
           decoration: InputDecoration(
             border: OutlineInputBorder(
@@ -60,7 +63,7 @@ class _AddHobbiesState extends State<AddHobbies> {
             contentPadding: EdgeInsets.symmetric(horizontal: 16.w,vertical: 14.h),
           ),
         ),
-            SizedBox(height: ScreenUtil().setHeight(15),),
+            SizedBox(height: ScreenUtil().setHeight(30),),
             Expanded(
               child: GridView.builder(
                 scrollDirection: Axis.vertical,

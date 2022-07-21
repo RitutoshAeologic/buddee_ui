@@ -24,37 +24,39 @@ class _SignInScreenState extends State<SignInScreen> {
     return
       Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
+      appBar:
+      AppBar(
         elevation: 0,
-        leading: Icon(Icons.arrow_back_ios,color: AppColors.black,),
+        leading: Padding(
+          padding:  EdgeInsets.only(left: 32,),
+          child: Icon(Icons.arrow_back_ios,color: AppColors.black,),
+        ),
         backgroundColor: AppColors.white,
       ),
       body: SingleChildScrollView(
-        child:
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20,
-          vertical: 10),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 32,),
           child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: ScreenUtil().setHeight(15),),
+              SizedBox(height: ScreenUtil().setHeight(10),),
               Center(
                 child: Text(AppStrings.helloAgainText,style: AppTextStyle.helloAgaintext ),
               ),
-              SizedBox(height: ScreenUtil().setHeight(15),),
+              SizedBox(height: ScreenUtil().setHeight(8),),
               Center(
                 child: Text(
                   AppStrings.singInAccountText,style:AppTextStyle.signInAccount ),
               ),
-              SizedBox(height: ScreenUtil().setHeight(40),),
+              SizedBox(height: ScreenUtil().setHeight(28),),
               Text(AppStrings.emailAddressText,style: AppTextStyle.text3 ),
-              SizedBox(height: ScreenUtil().setHeight(10),),
+              SizedBox(height: ScreenUtil().setHeight(8),),
               GetTextField(hint: AppStrings.demoEmailText, obscure: false,),
-              SizedBox(height: ScreenUtil().setHeight(25),),
+              SizedBox(height: ScreenUtil().setHeight(18),),
               Text(AppStrings.passwordText,style:AppTextStyle.text3 ),
-              SizedBox(height: ScreenUtil().setHeight(10),),
+              SizedBox(height: ScreenUtil().setHeight(8),),
               GetTextField(hint: AppStrings.enterPasswordText , obscure: true,),
-              SizedBox(height: ScreenUtil().setHeight(15)),
+              SizedBox(height: ScreenUtil().setHeight(12)),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
@@ -71,9 +73,9 @@ class _SignInScreenState extends State<SignInScreen> {
                     ),
                     )
               ],),
-              SizedBox(height: ScreenUtil().setHeight(25),),
+              SizedBox(height: ScreenUtil().setHeight(20),),
               MaterialButtonBox(title: AppStrings.signInTitleText, onTap: (){}),
-              SizedBox(height: ScreenUtil().setHeight(25),),
+              SizedBox(height: ScreenUtil().setHeight(24),),
             //  Divider(thickness:2,color: Colors.grey,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -87,9 +89,9 @@ class _SignInScreenState extends State<SignInScreen> {
                   ),
                 ],
               ),
-              SizedBox(height: ScreenUtil().setHeight(25),),
+              SizedBox(height: ScreenUtil().setHeight(20),),
               TextButtonBox(title: AppStrings.googleSignInText, onTap: (){}, icon: AppIcons.google),
-              SizedBox(height: ScreenUtil().setHeight(15),),
+              SizedBox(height: ScreenUtil().setHeight(12),),
               TextButtonBox(title: AppStrings.facebookSignInText, onTap: (){}, icon: AppIcons.fb),
               Row(
                 children: <Widget>[
@@ -99,7 +101,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   ),
                   TextButton(
                     child:  Text(
-                      'Sign up',
+                      AppStrings.lcsignUpText,
                       style: AppTextStyle.text7
                     ),
                     onPressed: () {
@@ -111,7 +113,7 @@ class _SignInScreenState extends State<SignInScreen> {
               ),
             ],
           ),
-        )
+        ),
       ),
     );
   }

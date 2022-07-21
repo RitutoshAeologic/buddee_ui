@@ -8,8 +8,7 @@ import 'colors.dart';
 class AppTextStyle {
   static TextStyle text1 =  const TextStyle(
 
-      fontStyle: FontStyle.normal,
-      color: AppColors.black,
+      color: AppColors.Onboardsubtitle,
       fontWeight: FontWeight.w500,
       fontSize: 20,
       fontFamily: 'PoppinosR'
@@ -84,7 +83,21 @@ class AppTextStyle {
   static TextStyle text7 = const TextStyle(
       fontSize: 12,
       fontWeight: FontWeight.w500,
-      fontFamily: 'PoppinosR'
+      fontFamily: 'PoppinosR',
+    color: AppColors.signuptextColor
+  );
+  static TextStyle maniPhototext = const TextStyle(
+      fontSize: 12,
+      fontWeight: FontWeight.w500,
+      fontFamily: 'PoppinosR',
+      color: AppColors.mainphototextColor
+  );
+
+  static TextStyle deletetext = const TextStyle(
+      fontSize: 12,
+      fontWeight: FontWeight.w500,
+      fontFamily: 'PoppinosR',
+      color: AppColors.deletetextColor
   );
 
   static TextStyle text8 = const TextStyle(
