@@ -111,7 +111,7 @@ class _SignUpAboutState extends State<SignUpAbout> {
 
                         if(pickedDate != null ){
                           print(pickedDate);  //pickedDate output format => 2021-03-10 00:00:00.000
-                          String formattedDate = DateFormat('yyyy-MM-dd').format(pickedDate);
+                          String formattedDate = DateFormat('dd-MM-yyyy').format(pickedDate);
                           print(formattedDate); //formatted date output using intl package =>  2021-03-16
                           //you can implement different kind of Date Format here according to your requirement
 
@@ -132,7 +132,7 @@ class _SignUpAboutState extends State<SignUpAbout> {
                   ),
                   contentPadding: EdgeInsets.symmetric(horizontal: 16.w,vertical: 14.h),
                 ),
-                obscureText: true,
+                obscureText: false,
               ),
               SizedBox(height: ScreenUtil().setHeight(21),),
               Text(AppStrings.genderText, style: AppTextStyle.text3, ),
