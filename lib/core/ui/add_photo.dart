@@ -1,11 +1,15 @@
+import 'dart:io';
+
 import 'package:buddee_ui/core/ui/edit_add_photo.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../constants/colors.dart';
 import '../constants/font_constants.dart';
@@ -25,6 +29,32 @@ class _AddPhotoState extends State<AddPhoto> {
   List<CameraDescription> cameras = [];
   final List<String> temp = [];
   bool isSelected = false;
+  File? selectedImage;
+  Future imgFromCamera() async{
+    final selectdImage = await ImagePicker().pickImage(
+        source: ImageSource.camera,imageQuality: 80 );
+    if(selectedImage == null) return;
+    final imageTemporary = File(selectdImage!.path);
+    setState(() {
+      this.selectedImage = imageTemporary;
+    });
+  }
+
+  Future imgFromGallery() async{
+    try{
+    final selectdImage = await ImagePicker().pickImage(
+        source: ImageSource.gallery);
+    if(selectedImage == null) return;
+    final imageTemporary = File(selectdImage!.path);
+
+    setState(() {
+      this.selectedImage = imageTemporary;
+    });} on PlatformException catch (e){
+      print('Failed to pick image: $e');
+    }
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return
@@ -65,32 +95,64 @@ class _AddPhotoState extends State<AddPhoto> {
                   ),
                   itemBuilder: (context , index){
                     return
-                      Stack(
-                        children: [
-                          Container(
-
-                            //height: ScreenUtil().setHeight(140),
-                            //width: ScreenUtil().setWidth(109),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(8.0),
-                              color: AppColors.photobgColor,
-
+                      InkWell(
+                        onTap: (){
+                          Get.bottomSheet(
+                              Container(
+                            height: ScreenUtil().setHeight(150),
+                            color: AppColors.photobgColor,
+                            child: Column(
+                             // mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                ListTile(
+                                  leading: Icon(Icons.photo_library_outlined,color: AppColors.genderbg2Color,),
+                                  title: Text('Gallery'),
+                                  textColor: AppColors.textblueColor,
+                                  onTap: () {
+                                    imgFromGallery();
+                                  },
+                                ),
+                                ListTile(
+                                  leading: Icon(Icons.photo_camera_outlined,color: AppColors.genderbg2Color,),
+                                  title: Text('Camera'),
+                                  textColor: AppColors.textblueColor,
+                                  onTap: (){
+                                    imgFromCamera();
+                                  },
+                                )
+                              ],
                             ),
-                         //   child:
-                            // Image.asset(AppIcons.onBoardbgjpg,
-                            //   fit: BoxFit.cover,
-                            // ),
                           ),
-                          Positioned(
-                              top: 108,
-                              left: 68,
-                              child:
-                          IconButton(onPressed: () {  }, icon: Icon(Icons.add_circle,color: AppColors.greyTextColor,),
-                            
-                          )
-                          )
-                        ],
+                          isDismissible: true
+                          );
+                        },
+                        child: Stack(
+                          children: [
+                            Container(
 
+                              //height: ScreenUtil().setHeight(140),
+                              //width: ScreenUtil().setWidth(109),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8.0),
+                                color: AppColors.photobgColor,
+
+                              ),
+                           //   child:
+                              // Image.asset(AppIcons.onBoardbgjpg,
+                              //   fit: BoxFit.cover,
+                              // ),
+                            ),
+                            Positioned(
+                                top: 108,
+                                left: 68,
+                                child:
+                            IconButton(onPressed: () {  }, icon: Icon(Icons.add_circle,color: AppColors.greyTextColor,),
+
+                            )
+                            )
+                          ],
+
+                        ),
                       );
                   }
               ),

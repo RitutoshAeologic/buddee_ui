@@ -17,6 +17,9 @@ class AppIcons {
   static const String edit           = 'assets/images/svg/edit.svg';
   static const String mainphoto      = 'assets/images/svg/main_photo.svg';
   static const String calendar      = 'assets/images/svg/calendar.svg';
+  static const String forgotpass      = 'assets/images/svg/forgotpass.svg';
+  static const String checkemail      = 'assets/images/svg/checkemail.svg';
+  static const String resetpass      = 'assets/images/svg/resetpass.svg';
 
   ///JPG_IMAGES
   static const String onBoardbgjpg              = 'assets/images/jpg/Background.jpg';

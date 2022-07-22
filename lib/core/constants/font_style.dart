@@ -31,7 +31,7 @@ class AppTextStyle {
   static TextStyle helloAgaintext = const TextStyle(
   fontSize: 40,
   fontWeight: FontWeight.w500,
-      fontFamily: 'Poppins',
+      fontFamily: 'PoppinsR',
       color: AppColors.textblueColor,
   );
 
@@ -39,7 +39,8 @@ class AppTextStyle {
   fontWeight: FontWeight.w400,
   fontSize: 12,
   decoration: TextDecoration.underline,
-   color: AppColors.greyTextColor
+   color: AppColors.greyTextColor,
+   fontFamily: 'Poppins',
   );
 
   static TextStyle signInAccount = const TextStyle(
@@ -146,5 +147,12 @@ class AppTextStyle {
       fontWeight: FontWeight.w600,
       fontFamily: 'PoppinsR',
       color: AppColors.signInColor
+  );
+
+  static TextStyle text11 = const  TextStyle(
+      fontWeight: FontWeight.w400,
+      fontSize: 14,
+      color: AppColors.greyTextColor,
+    fontFamily: 'Poppins',
   );
 }

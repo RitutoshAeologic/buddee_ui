@@ -12,13 +12,14 @@ class AppStrings {
   static const String emailAddressText                 = 'Email address';
   static const String demoEmailText                    = 'profile@gmail.com';
   static const String passwordText                     = 'Password';
+  static const String newpasswordText                     = 'New Password';
   static const String confirmpasswordText              = 'Confirm Password';
   static const String enterPasswordText                = 'Enter Your Password';
   static const String forgetPasswordText               = 'Forget your password?';
   static const String orWithText                       = 'Or with';
   static const String googleSignInText                 = 'Sign in with Google';
   static const String facebookSignInText               = 'Sign in with Facebook';
-  static const String dontAccountText                  = 'Dont have account?Lets';
+  static const String dontAccountText                  = 'Don\'t have account? Let\'s';
   static const String signUpTitleText                  = 'Sign up';
   static const String tellUsText                       = 'Tell us a bit about you';
   static const String nameText                         = 'Name';
@@ -35,9 +36,17 @@ class AppStrings {
   static const String addnewhobbyText                  = '+ ADD NEW HOBBY';
   static const String nextstepText                     = 'NEXT STEP';
   static const String addphotosText                     = 'Add photos';
-  static const String addphotoText                     = 'Add photo';
-  static const String deleteText                     = 'Delete';
+  static const String addphotoText                      = 'Add photo';
+  static const String deleteText                        = 'Delete';
   static const String mainphotoText                     = 'Main photo';
-
+  static const String forgetpassText                    = 'Forgot \n password?';
+  static const String forgetpasssubtitleText            = 'Don’t worry! It happens. Please enter the address associated with your account.';
+  static const String submitText                        = 'SUBMIT';
+  static const String checkemailText                    = 'Check your \n Email';
+  static const String openemailText                     = 'OPEN EMAIL';
+  static const String checkemailsubtitleText            = 'We have send a password recover\n instructions to your Email.';
+  static const String skipconfirmText                   = 'SKIP, I\'LL CONFIRM LATER';
+  static const String resetpassText                     = 'Reset \n password';
+ // static const String mainphotoText                     = 'Main photo';
 }
 
