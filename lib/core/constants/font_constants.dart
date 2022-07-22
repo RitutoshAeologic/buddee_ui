@@ -23,7 +23,7 @@ class AppStrings {
   static const String signUpTitleText                  = 'Sign up';
   static const String tellUsText                       = 'Tell us a bit about you';
   static const String nameText                         = 'Name';
-  static const String dobText                          = 'Date of Birth';
+  static const String dobText                          = 'Date of birth';
   static const String genderText                       = 'Gender';
   static const String maleText                         = 'Male';
   static const String femaleText                       = 'Female';

@@ -24,7 +24,7 @@ class PlainMaterialButtonBox extends StatelessWidget {
             minWidth: MediaQuery.of(context).size.width,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(40),
-            side: BorderSide(color: AppColors.signInColor)
+            side: BorderSide(color: AppColors.signInColor,width: 1.5)
             ),
             child:
             Text(title,
