@@ -1,3 +1,4 @@
+import 'package:buddee_ui/core/ui/check_email.dart';
 import 'package:buddee_ui/core/ui/sign_up_about.dart';
 import 'package:buddee_ui/core/ui/sign_up_screen.dart';
 import 'package:flutter/cupertino.dart';
@@ -70,7 +71,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
 
               SizedBox(height: ScreenUtil().setHeight(24),),
               MaterialButtonBox(title: AppStrings.submitText, onTap: (){
-                Get.to(SignUpAbout());
+                Get.to(CheckEmail());
               }),
               SizedBox(height: ScreenUtil().setHeight(42),),
               Row(

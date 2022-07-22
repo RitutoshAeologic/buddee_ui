@@ -1,3 +1,4 @@
+import 'package:buddee_ui/core/ui/reset_password.dart';
 import 'package:buddee_ui/core/ui/sign_up_about.dart';
 import 'package:buddee_ui/core/ui/sign_up_screen.dart';
 import 'package:flutter/cupertino.dart';
@@ -63,7 +64,7 @@ class _CheckEmailState extends State<CheckEmail> {
               SizedBox(height: ScreenUtil().setHeight(57),),
               //SizedBox(height: ScreenUtil().setHeight(24),),
               MaterialButtonBox(title: AppStrings.openemailText, onTap: (){
-                //Get.to(SignUpAbout());
+                Get.to(ResetPassword());
               }),
               SizedBox(height: ScreenUtil().setHeight(49),),
               Text(AppStrings.skipconfirmText,style: AppTextStyle.text2,),

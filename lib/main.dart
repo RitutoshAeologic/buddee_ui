@@ -34,8 +34,8 @@ class MyApp extends StatelessWidget {
           useInheritedMediaQuery: true,
           home: //ResetPassword()
           //CheckEmail(),
-          ForgetPassword()
-          // OnBoardScreen(),
+         // ForgetPassword()
+           OnBoardScreen(),
          // SignInScreen(),
         //SignUpAbout(),
           //AddHobbies(),

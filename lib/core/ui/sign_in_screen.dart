@@ -1,6 +1,7 @@
 import 'package:buddee_ui/core/constants/font_constants.dart';
 import 'package:buddee_ui/core/constants/font_style.dart';
 import 'package:buddee_ui/core/constants/icon_constants.dart';
+import 'package:buddee_ui/core/ui/forgot_password.dart';
 import 'package:buddee_ui/core/ui/sign_up_about.dart';
 import 'package:buddee_ui/core/ui/sign_up_screen.dart';
 import 'package:buddee_ui/core/widget/material_button.dart';
@@ -68,7 +69,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, "myRoute");
+                      Get.to(ForgetPassword());
                     },
                     child:  Text(AppStrings.forgetPasswordText,
                       style: AppTextStyle.forgetyourpasswordtext

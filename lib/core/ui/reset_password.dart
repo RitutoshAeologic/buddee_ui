@@ -1,3 +1,4 @@
+import 'package:buddee_ui/core/ui/sign_in_screen.dart';
 import 'package:buddee_ui/core/ui/sign_up_about.dart';
 import 'package:buddee_ui/core/ui/sign_up_screen.dart';
 import 'package:flutter/cupertino.dart';
@@ -67,7 +68,7 @@ class _ResetPasswordState extends State<ResetPassword> {
 
               SizedBox(height: ScreenUtil().setHeight(24),),
               MaterialButtonBox(title: AppStrings.submitText, onTap: (){
-                Get.to(SignUpAbout());
+                Get.to(SignInScreen());
               }),
               SizedBox(height: ScreenUtil().setHeight(42),),
               Row(
