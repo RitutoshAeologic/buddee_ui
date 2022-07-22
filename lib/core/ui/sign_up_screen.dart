@@ -1,7 +1,11 @@
+import 'package:buddee_ui/core/ui/sign_in_screen.dart';
+import 'package:buddee_ui/core/ui/sign_up_about.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 import '../constants/colors.dart';
 import '../constants/font_constants.dart';
@@ -29,7 +33,10 @@ class _SignUpState extends State<SignUp> {
         elevation: 0,
         leading: Padding(
           padding:  EdgeInsets.only(left: 25.06,),
-          child: Icon(Icons.arrow_back_ios,color: AppColors.black,),
+          child:
+          IconButton(
+            onPressed: (){Get.back();},icon:Icon(Icons.arrow_back_ios,color: AppColors.black,) ,
+          )
         ),
         backgroundColor: AppColors.white,
       ),
@@ -40,6 +47,13 @@ class _SignUpState extends State<SignUp> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // Row(
+                //   crossAxisAlignment: CrossAxisAlignment.start,
+                //   mainAxisAlignment: MainAxisAlignment.start,
+                //   children: [
+                //     IconButton(onPressed: (){}, icon: Icon(Icons.arrow_back_ios,color: AppColors.black,)),
+                //   ],
+                // ),
                 SizedBox(height: ScreenUtil().setHeight(24),),
                 Center(
                   child: Text(AppStrings.helloText,style: AppTextStyle.helloAgaintext ),
@@ -62,7 +76,9 @@ class _SignUpState extends State<SignUp> {
                 SizedBox(height: ScreenUtil().setHeight(8),),
                 GrayGetTextField(hint: AppStrings.confirmpasswordText , obscure: true,),
                 SizedBox(height: ScreenUtil().setHeight(24)),
-                MaterialButtonBox(title: AppStrings.signUpText, onTap: (){}),
+                MaterialButtonBox(title: AppStrings.signUpText, onTap: (){
+                  Get.to(SignUpAbout());
+                }),
                 SizedBox(height: ScreenUtil().setHeight(24),),
                 //  Divider(thickness:2,color: Colors.grey,),
                 Row(
@@ -89,10 +105,11 @@ class _SignUpState extends State<SignUp> {
                     ),
                     TextButton(
                       child:  Text(
-                          'Sign up',
+                          'Sign in',
                           style: AppTextStyle.text7
                       ),
                       onPressed: () {
+                        Get.to(SignInScreen(),);
                         //signup screen
                       },
                     )

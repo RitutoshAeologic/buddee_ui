@@ -6,6 +6,7 @@ import 'package:buddee_ui/core/ui/sign_up_screen.dart';
 import 'package:buddee_ui/core/ui/save_hobbie.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 import 'core/ui/add_hobbies.dart';
 import 'core/ui/add_photo.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
      return ScreenUtilInit(
       designSize: Size(360, 690),
       builder: (_,a){
-        return MaterialApp(
+        return GetMaterialApp(
           debugShowCheckedModeBanner: false,
           useInheritedMediaQuery: true,
           home: OnBoardScreen(),

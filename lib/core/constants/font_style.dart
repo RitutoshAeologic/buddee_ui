@@ -119,7 +119,7 @@ class AppTextStyle {
   static TextStyle text10 = const TextStyle(
       fontSize: 16,
       fontWeight: FontWeight.w600,
-      fontFamily: 'Poppins',
+      fontFamily: 'PoppinsR',
     color: AppColors.textblueColor
   );
   static TextStyle blueboldtext = const TextStyle(

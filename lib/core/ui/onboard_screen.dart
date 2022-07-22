@@ -1,11 +1,15 @@
 import 'package:buddee_ui/core/constants/font_constants.dart';
 import 'package:buddee_ui/core/constants/font_style.dart';
 import 'package:buddee_ui/core/constants/icon_constants.dart';
+import 'package:buddee_ui/core/ui/sign_in_screen.dart';
+import 'package:buddee_ui/core/ui/sign_up_screen.dart';
 import 'package:buddee_ui/core/widget/material_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 //import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 
 class OnBoardScreen extends StatefulWidget {
@@ -58,11 +62,12 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 32),
             child: MaterialButtonBox(title: AppStrings.createAccountText,
-                onTap: (){}),
+                onTap: (){Get.to(SignUp(),);}),
           ),
           SizedBox(height: ScreenUtil().setHeight(25),),
           GestureDetector(
             onTap: () {
+              Get.to(SignInScreen());
             },
             child:  Text(AppStrings.signInTitleText,
               style: AppTextStyle.text2),

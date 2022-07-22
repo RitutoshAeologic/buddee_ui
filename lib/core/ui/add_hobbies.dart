@@ -1,8 +1,11 @@
 import 'package:buddee_ui/core/constants/hobbies_strings.dart';
+import 'package:buddee_ui/core/ui/add_new_hobby.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import '../constants/colors.dart';
 import '../constants/font_constants.dart';
 import '../constants/font_style.dart';
@@ -21,6 +24,7 @@ class AddHobbies extends StatefulWidget {
 class _AddHobbiesState extends State<AddHobbies> {
   final List<String> temp = [];
   bool isSelected = false;
+  int tappedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return
@@ -30,7 +34,9 @@ class _AddHobbiesState extends State<AddHobbies> {
         elevation: 0,
         leading: Padding(
           padding:  EdgeInsets.only(left: 25.06,),
-          child: Icon(Icons.arrow_back_ios,color: AppColors.black,),
+          child: IconButton(
+            onPressed: (){Get.back();},icon:Icon(Icons.arrow_back_ios,color: AppColors.black,) ,
+          )
         ),
         backgroundColor: AppColors.white,
       ),
@@ -73,32 +79,34 @@ class _AddHobbiesState extends State<AddHobbies> {
                     crossAxisCount: 2,
                     childAspectRatio: 10 / 2,
                     crossAxisSpacing: 10.0,
-                    mainAxisSpacing: 14.0
+                    mainAxisSpacing: 14.0,
+                    mainAxisExtent: 35,
                 ),
                 itemBuilder: (BuildContext context, int index){
                   return
 
                     ChoiceChip(
                       shape:
-                      StadiumBorder(side: BorderSide(color: AppColors.textblueColor )),
+                      RoundedRectangleBorder(side: BorderSide(color: AppColors.textblueColor ),
+                      borderRadius: BorderRadius.all(Radius.circular(8))),
                       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                       backgroundColor: AppColors.white,
                       label:
                       Container(
-                        height: ScreenUtil().setHeight(50),
-                        padding: EdgeInsets.all(6),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(8.0),
-                            ),
+                       // height: ScreenUtil().setHeight(50),
+                        padding: EdgeInsets.only(top: 5),
+                       // decoration: BoxDecoration(
+                           // borderRadius: BorderRadius.all(
+                           //   Radius.circular(15.0),
+                          //  ),
                             // border: Border.all(
                             //   color: AppColors.textblueColor,
                             //   width: 1.5,
                             // )
-                        ),
+                       // ),
                         width: MediaQuery.of(context).size.width,
                         child:
-                        Text(myHobbies[index],textAlign: TextAlign.start ,),
+                        Text(myHobbies[index],textAlign: TextAlign.start ,style: AppTextStyle.text10,),
 
                         ),
                       padding: const EdgeInsets.only(bottom: 5.0),
@@ -108,7 +116,9 @@ class _AddHobbiesState extends State<AddHobbies> {
                         setState(() {
                          // myHobbies[index]=i;
                           isSelected = newBoolvalue;
+                          tappedIndex = index;
                           temp.add(myHobbies[index]);
+                          Get.to(AddNewHobbie());
                         });
                        // temp.add(myHobbies[index]);
                       },

@@ -1,12 +1,16 @@
 import 'package:buddee_ui/core/constants/font_constants.dart';
 import 'package:buddee_ui/core/constants/font_style.dart';
 import 'package:buddee_ui/core/constants/icon_constants.dart';
+import 'package:buddee_ui/core/ui/sign_up_about.dart';
+import 'package:buddee_ui/core/ui/sign_up_screen.dart';
 import 'package:buddee_ui/core/widget/material_button.dart';
 import 'package:buddee_ui/core/widget/text_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 import '../constants/colors.dart';
 import '../widget/get_text_field.dart';
@@ -29,7 +33,9 @@ class _SignInScreenState extends State<SignInScreen> {
         elevation: 0,
         leading: Padding(
           padding:  EdgeInsets.only(left: 32,),
-          child: Icon(Icons.arrow_back_ios,color: AppColors.black,),
+          child: IconButton(
+            onPressed: (){Get.back();},icon:Icon(Icons.arrow_back_ios,color: AppColors.black,) ,
+          )
         ),
         backgroundColor: AppColors.white,
       ),
@@ -70,7 +76,9 @@ class _SignInScreenState extends State<SignInScreen> {
                     )
               ],),
               SizedBox(height: ScreenUtil().setHeight(20),),
-              MaterialButtonBox(title: AppStrings.signInTitleText, onTap: (){}),
+              MaterialButtonBox(title: AppStrings.signInTitleText, onTap: (){
+                Get.to(SignUpAbout());
+              }),
               SizedBox(height: ScreenUtil().setHeight(24),),
             //  Divider(thickness:2,color: Colors.grey,),
               Row(
@@ -101,6 +109,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       style: AppTextStyle.text7,
                     ),
                     onPressed: () {
+                      Get.to(SignUp());
                       //signup screen
                     },
                   )

@@ -1,8 +1,11 @@
+import 'package:buddee_ui/core/ui/add_hobbies.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 
 import '../constants/colors.dart';
@@ -33,7 +36,9 @@ class _SignUpAboutState extends State<SignUpAbout> {
           elevation: 0,
           leading: Padding(
             padding:  EdgeInsets.only(left: 25.06,),
-            child: Icon(Icons.arrow_back_ios,color: AppColors.black,),
+            child: IconButton(
+              onPressed: (){Get.back();},icon:Icon(Icons.arrow_back_ios,color: AppColors.black,) ,
+            )
           ),
           backgroundColor: AppColors.white,
         ),
@@ -55,107 +60,111 @@ class _SignUpAboutState extends State<SignUpAbout> {
       body:  Padding(
         padding: EdgeInsets.symmetric(horizontal: 32,
             vertical: 10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(height: ScreenUtil().setHeight(28),),
-            Center(child: Text(AppStrings.tellUsText,style: AppTextStyle.text8)),
-            SizedBox(height: ScreenUtil().setHeight(29),),
-            Text(AppStrings.nameText,style: AppTextStyle.text3 ),
-            SizedBox(height: ScreenUtil().setHeight(8),),
-            GetTextField(hint: AppStrings.nameText, obscure: false,),
-            SizedBox(height: ScreenUtil().setHeight(21),),
-            Text(AppStrings.dobText,style:AppTextStyle.text3 ),
-            SizedBox(height: ScreenUtil().setHeight(8),),
-            GetTextField(hint: AppStrings.dobText , obscure: false,),
-            SizedBox(height: ScreenUtil().setHeight(21),),
-            Text(AppStrings.genderText, style: AppTextStyle.text3, ),
-            SizedBox(height: ScreenUtil().setHeight(8),),
-            Container(
-              height: ScreenUtil().setHeight(60),
-              padding: EdgeInsets.all(4),
-              decoration: BoxDecoration(
-               borderRadius: BorderRadius.all(
-                  Radius.circular(10.0),
-                  ),
-                  border: Border.all(
-                    color: AppColors.lightgreyTextColor,
-                    width: 2,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: ScreenUtil().setHeight(28),),
+              Center(child: Text(AppStrings.tellUsText,style: AppTextStyle.text8)),
+              SizedBox(height: ScreenUtil().setHeight(29),),
+              Text(AppStrings.nameText,style: AppTextStyle.text3 ),
+              SizedBox(height: ScreenUtil().setHeight(8),),
+              GetTextField(hint: AppStrings.nameText, obscure: false,),
+              SizedBox(height: ScreenUtil().setHeight(21),),
+              Text(AppStrings.dobText,style:AppTextStyle.text3 ),
+              SizedBox(height: ScreenUtil().setHeight(8),),
+              GetTextField(hint: AppStrings.dobText , obscure: false,),
+              SizedBox(height: ScreenUtil().setHeight(21),),
+              Text(AppStrings.genderText, style: AppTextStyle.text3, ),
+              SizedBox(height: ScreenUtil().setHeight(8),),
+              Container(
+                height: ScreenUtil().setHeight(60),
+                padding: EdgeInsets.all(4),
+                decoration: BoxDecoration(
+                 borderRadius: BorderRadius.all(
+                    Radius.circular(10.0),
+                    ),
+                    border: Border.all(
+                      color: AppColors.lightgreyTextColor,
+                      width: 2,
+                    )
+                ),
+                width: MediaQuery.of(context).size.width,
+                child:
+                  ToggleSwitch(
+                    minHeight: ScreenUtil().setHeight(50),
+                    minWidth: ScreenUtil().setWidth(143),
+                    cornerRadius: (10),
+                    radiusStyle: true,
+                    fontSize: 16.sp,
+                    iconSize: 25.r,
+                    activeBgColors: [[AppColors.genderbg1Color],[AppColors.genderbg2Color]],
+                    activeFgColor: AppColors.black,
+                    inactiveBgColor: AppColors.white,
+                    totalSwitches: 2,
+                    labels: [AppStrings.maleText,AppStrings.femaleText],
+                    /// todo check svg error
+                    icons: [Icons.male,Icons.female],
+                    onToggle: (index){},
                   )
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //   children: [
+                //     Container(
+                //       height: ScreenUtil().setHeight(50),
+                //       width: ScreenUtil().setWidth(150),
+                //       decoration: BoxDecoration(
+                //           gradient: LinearGradient(
+                //             colors: [
+                //               AppColors.genderbg1Color,
+                //               AppColors.genderbg2Color,
+                //             ],
+                //           ),
+                //           borderRadius: const BorderRadius.all(
+                //             Radius.circular(10.0),
+                //           ),
+                //
+                //       ),
+                //       child: TextButton.icon(
+                //         label: Text(AppStrings.maleText,
+                //         style: AppTextStyle.genderText,),
+                //         onPressed: (){},
+                //         icon: SvgPicture.asset(AppIcons.male),
+                //       ),
+                //     ),
+                //     Container(
+                //       height: ScreenUtil().setHeight(50),
+                //       width: ScreenUtil().setWidth(150),
+                //       decoration: BoxDecoration(
+                //         // gradient: LinearGradient(
+                //         //   colors: [
+                //         //     AppColors.genderbg1Color,
+                //         //     AppColors.genderbg2Color,
+                //         //   ],
+                //         // ),
+                //         borderRadius: const BorderRadius.all(
+                //           Radius.circular(10.0),
+                //         ),
+                //
+                //       ),
+                //       child:
+                //       TextButton.icon(
+                //         label: Text(AppStrings.femaleText,
+                //           style: AppTextStyle.genderText,),
+                //         onPressed: (){},
+                //         icon: SvgPicture.asset(AppIcons.female),
+                //       ),
+                //     )
+                //   ],
+                // ),
               ),
-              width: MediaQuery.of(context).size.width,
-              child:
-                ToggleSwitch(
-                  minHeight: ScreenUtil().setHeight(50),
-                  minWidth: ScreenUtil().setWidth(143),
-                  cornerRadius: (10),
-                  radiusStyle: true,
-                  fontSize: 16.sp,
-                  iconSize: 25.r,
-                  activeBgColors: [[AppColors.genderbg1Color],[AppColors.genderbg2Color]],
-                  activeFgColor: AppColors.black,
-                  inactiveBgColor: AppColors.white,
-                  totalSwitches: 2,
-                  labels: [AppStrings.maleText,AppStrings.femaleText],
-                  /// todo check svg error
-                  icons: [Icons.male,Icons.female],
-                  onToggle: (index){},
-                )
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //   children: [
-              //     Container(
-              //       height: ScreenUtil().setHeight(50),
-              //       width: ScreenUtil().setWidth(150),
-              //       decoration: BoxDecoration(
-              //           gradient: LinearGradient(
-              //             colors: [
-              //               AppColors.genderbg1Color,
-              //               AppColors.genderbg2Color,
-              //             ],
-              //           ),
-              //           borderRadius: const BorderRadius.all(
-              //             Radius.circular(10.0),
-              //           ),
-              //
-              //       ),
-              //       child: TextButton.icon(
-              //         label: Text(AppStrings.maleText,
-              //         style: AppTextStyle.genderText,),
-              //         onPressed: (){},
-              //         icon: SvgPicture.asset(AppIcons.male),
-              //       ),
-              //     ),
-              //     Container(
-              //       height: ScreenUtil().setHeight(50),
-              //       width: ScreenUtil().setWidth(150),
-              //       decoration: BoxDecoration(
-              //         // gradient: LinearGradient(
-              //         //   colors: [
-              //         //     AppColors.genderbg1Color,
-              //         //     AppColors.genderbg2Color,
-              //         //   ],
-              //         // ),
-              //         borderRadius: const BorderRadius.all(
-              //           Radius.circular(10.0),
-              //         ),
-              //
-              //       ),
-              //       child:
-              //       TextButton.icon(
-              //         label: Text(AppStrings.femaleText,
-              //           style: AppTextStyle.genderText,),
-              //         onPressed: (){},
-              //         icon: SvgPicture.asset(AppIcons.female),
-              //       ),
-              //     )
-              //   ],
-              // ),
-            ),
-            /// Check Height issue,over
-            SizedBox(height: ScreenUtil().setHeight(175)),
-            MaterialButtonBox(title: AppStrings.nextText, onTap: (){}),
-          ],
+              /// Check Height issue,over
+              SizedBox(height: ScreenUtil().setHeight(175)),
+              MaterialButtonBox(title: AppStrings.nextText, onTap: (){
+                Get.to(AddHobbies());
+              }),
+            ],
+          ),
         ),
       ),
       backgroundColor: AppColors.white,
