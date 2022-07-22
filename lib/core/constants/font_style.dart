@@ -75,7 +75,7 @@ class AppTextStyle {
   static TextStyle text4 = const TextStyle(
       fontWeight: FontWeight.w400,
       fontSize: 12,
-      decoration: TextDecoration.underline,
+     // decoration: TextDecoration.underline,
       fontFamily: 'Poppins'
   );
 
