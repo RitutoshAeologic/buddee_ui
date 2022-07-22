@@ -61,7 +61,8 @@ class _AddedHobbiesState extends State<AddedHobbies> {
                    mainAxisSpacing: 14.0
                ),
                itemBuilder: (BuildContext context, int index){
-             return Container(
+             return
+               Container(
                height: ScreenUtil().setHeight(32),
                width: ScreenUtil().setWidth(152),
                decoration: BoxDecoration(
