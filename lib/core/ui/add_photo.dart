@@ -1,4 +1,5 @@
 import 'package:buddee_ui/core/ui/edit_add_photo.dart';
+import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -21,6 +22,7 @@ class AddPhoto extends StatefulWidget {
 }
 
 class _AddPhotoState extends State<AddPhoto> {
+  List<CameraDescription> cameras = [];
   final List<String> temp = [];
   bool isSelected = false;
   @override

@@ -39,6 +39,10 @@ dependencies:
   flutter_svg_provider: ^1.0.3
   flutter_svg: ^1.1.1+1
   toggle_switch: ^2.0.1
+  camera: ^0.10.0
+  path_provider: ^2.0.11
+  syncfusion_flutter_datepicker: ^20.2.39
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:

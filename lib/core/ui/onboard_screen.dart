@@ -28,7 +28,7 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            height: ScreenUtil().setHeight(430),
+            height: ScreenUtil().setHeight(410),
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
               image: DecorationImage(
@@ -45,7 +45,7 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
               //  height: ScreenUtil().setHeight(100),
                   width: ScreenUtil().setWidth(270),
                 ),
-                  bottom: 40,
+                  bottom: 50,
                   left: 50
                 ),
 

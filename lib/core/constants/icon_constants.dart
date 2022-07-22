@@ -16,6 +16,7 @@ class AppIcons {
   static const String removebutton   = 'assets/images/svg/deletebutton.svg';
   static const String edit           = 'assets/images/svg/edit.svg';
   static const String mainphoto      = 'assets/images/svg/main_photo.svg';
+  static const String calendar      = 'assets/images/svg/calendar.svg';
 
   ///JPG_IMAGES
   static const String onBoardbgjpg              = 'assets/images/jpg/Background.jpg';

@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:intl/intl.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 
 import '../constants/colors.dart';
@@ -27,6 +28,15 @@ class SignUpAbout extends StatefulWidget {
 }
 
 class _SignUpAboutState extends State<SignUpAbout> {
+
+  TextEditingController dateinput = TextEditingController();
+
+  @override
+  void initState() {
+    dateinput.text = ""; //set the initial value of text field
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return
@@ -73,7 +83,57 @@ class _SignUpAboutState extends State<SignUpAbout> {
               SizedBox(height: ScreenUtil().setHeight(21),),
               Text(AppStrings.dobText,style:AppTextStyle.text3 ),
               SizedBox(height: ScreenUtil().setHeight(8),),
-              GetTextField(hint: AppStrings.dobText , obscure: false,),
+              TextField(
+                controller: dateinput,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12.r),
+                    borderSide: BorderSide(color: AppColors.lightgreyTextColor, width: 2),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12.r),
+                    borderSide: BorderSide(color: AppColors.lightgreyTextColor, width: 2),
+                  ),
+                  filled: true,
+                  fillColor: AppColors.white,
+                  hintText: AppStrings.dobText,
+                  hintStyle: AppTextStyle.text3,
+                  suffixIcon: Padding(
+                    padding: EdgeInsets.only(right: 145),
+                    child: IconButton(
+                      alignment: Alignment.center,
+                      onPressed: () async {
+                        DateTime? pickedDate = await showDatePicker(
+                            context: context, initialDate: DateTime.now(),
+                            firstDate: DateTime(2000), //DateTime.now() - not to allow to choose before today.
+                            lastDate: DateTime(2101)
+                        );
+
+                        if(pickedDate != null ){
+                          print(pickedDate);  //pickedDate output format => 2021-03-10 00:00:00.000
+                          String formattedDate = DateFormat('yyyy-MM-dd').format(pickedDate);
+                          print(formattedDate); //formatted date output using intl package =>  2021-03-16
+                          //you can implement different kind of Date Format here according to your requirement
+
+                          setState(() {
+                            dateinput.text = formattedDate; //set output date to TextField value.
+                          });
+                        }else{
+                          print("Date is not selected");
+                        }
+                      },
+                      icon:
+                        SvgPicture.asset(AppIcons.calendar,)
+                      // Icon(
+                      //   Icons.calendar_today_outlined,
+                      // //  size: 16,
+                      // ),
+                    ),
+                  ),
+                  contentPadding: EdgeInsets.symmetric(horizontal: 16.w,vertical: 14.h),
+                ),
+                obscureText: true,
+              ),
               SizedBox(height: ScreenUtil().setHeight(21),),
               Text(AppStrings.genderText, style: AppTextStyle.text3, ),
               SizedBox(height: ScreenUtil().setHeight(8),),
@@ -97,11 +157,26 @@ class _SignUpAboutState extends State<SignUpAbout> {
                     cornerRadius: (10),
                     radiusStyle: true,
                     fontSize: 16.sp,
-                    iconSize: 25.r,
+                    iconSize: 30.r,
+                    customTextStyles: [
+                      TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                      fontFamily: 'PoppinsR',
+                      color: AppColors.textblueColor
+                  ),
+                TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                    fontFamily: 'PoppinsR',
+                    color: AppColors.textblueColor
+                )
+                    ],
                     activeBgColors: [[AppColors.genderbg1Color],[AppColors.genderbg2Color]],
                     activeFgColor: AppColors.black,
                     inactiveBgColor: AppColors.white,
                     totalSwitches: 2,
+
                     labels: [AppStrings.maleText,AppStrings.femaleText],
                     /// todo check svg error
                     icons: [Icons.male,Icons.female],
