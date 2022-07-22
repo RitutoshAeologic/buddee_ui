@@ -56,6 +56,7 @@ class AppTextStyle {
       fontSize: 16,
       fontWeight: FontWeight.w400,
       fontFamily: 'Poppins',
+    color: AppColors.textblueColor,
   );
   static TextStyle lightbluetext = const TextStyle(
     fontSize: 16,
