@@ -97,6 +97,7 @@ class _SignUpState extends State<SignUp> {
                 TextButtonBox(title: AppStrings.googleSignInText, onTap: (){}, icon: AppIcons.google),
                 SizedBox(height: ScreenUtil().setHeight(16),),
                 TextButtonBox(title: AppStrings.facebookSignInText, onTap: (){}, icon: AppIcons.fb),
+                SizedBox(height: ScreenUtil().setHeight(32),),
                 Row(
                   children: <Widget>[
                     Text(AppStrings.dontAccountText,

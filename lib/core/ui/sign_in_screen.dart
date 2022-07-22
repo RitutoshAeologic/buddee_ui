@@ -98,6 +98,7 @@ class _SignInScreenState extends State<SignInScreen> {
               TextButtonBox(title: AppStrings.googleSignInText, onTap: (){}, icon: AppIcons.google),
               SizedBox(height: ScreenUtil().setHeight(12),),
               TextButtonBox(title: AppStrings.facebookSignInText, onTap: (){}, icon: AppIcons.fb),
+              SizedBox(height: ScreenUtil().setHeight(32),),
               Row(
                 children: <Widget>[
                    Text(AppStrings.dontAccountText,
