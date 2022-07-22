@@ -1,7 +1,10 @@
+import 'package:buddee_ui/core/ui/add_photo.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 import '../constants/colors.dart';
 import '../constants/font_constants.dart';
@@ -28,7 +31,9 @@ class _AddedHobbiesState extends State<AddedHobbies> {
         elevation: 0,
         leading: Padding(
           padding:  EdgeInsets.only(left: 25.06,),
-          child: Icon(Icons.arrow_back_ios,color: AppColors.black,),
+          child: IconButton(
+            onPressed: (){Get.back();},icon:Icon(Icons.arrow_back_ios,color: AppColors.black,) ,
+          )
         ),
         backgroundColor: AppColors.white,
       ),
@@ -115,7 +120,9 @@ class _AddedHobbiesState extends State<AddedHobbies> {
             SizedBox(height: ScreenUtil().setHeight(220),),
             PlainMaterialButtonBox(title: AppStrings.addnewhobbyText, onTap: (){}),
             SizedBox(height: ScreenUtil().setHeight(24),),
-            MaterialButtonBox(title: AppStrings.nextstepText, onTap: (){})
+            MaterialButtonBox(title: AppStrings.nextstepText, onTap: (){
+              Get.to(AddPhoto());
+            })
 
           ],
         ),

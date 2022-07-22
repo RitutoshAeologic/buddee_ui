@@ -1,3 +1,4 @@
+import 'package:buddee_ui/core/ui/added_hobby_list.dart';
 import 'package:buddee_ui/core/widget/plain_material_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -66,7 +67,7 @@ class _AddNewHobbieState extends State<AddNewHobbie> {
 
                   ),
                   child:Padding(
-                    padding: const EdgeInsets.only(left: 10,top:9),
+                    padding: const EdgeInsets.only(left: 9,top:12,),
                     child: Text('Badminton', style: AppTextStyle.text10,),
                   ),
                 ),
@@ -111,7 +112,9 @@ class _AddNewHobbieState extends State<AddNewHobbie> {
             SizedBox(height: ScreenUtil().setHeight(15),),
             Padding(
               padding: const EdgeInsets.only(left:16.0,right: 14),
-              child: MaterialButtonBox(title: AppStrings.nextstepText, onTap: (){}),
+              child: MaterialButtonBox(title: AppStrings.nextstepText, onTap: (){
+                Get.to(AddedHobbies());
+              }),
             )
 
           ],
