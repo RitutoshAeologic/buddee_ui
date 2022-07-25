@@ -31,7 +31,7 @@ class _EditAddPhotoState extends State<EditAddPhoto> {
         leading: Padding(
           padding:  EdgeInsets.only(left: 25.06,),
           child: IconButton(
-            onPressed: (){Get.back();},icon:Icon(Icons.arrow_back_ios,color: AppColors.backarrow,) ,
+            onPressed: (){Get.back();},icon:Icon(Icons.arrow_back_ios,color: AppColors.backarrow,size: 18.r) ,
           )
         ),
         backgroundColor: AppColors.white,

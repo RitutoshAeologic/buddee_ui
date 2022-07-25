@@ -35,7 +35,8 @@ class _SignInScreenState extends State<SignInScreen> {
         leading: Padding(
           padding:  EdgeInsets.only(left: 32,),
           child: IconButton(
-            onPressed: (){Get.back();},icon:Icon(Icons.arrow_back_ios,color: AppColors.textblueColor,) ,
+            onPressed: (){Get.back();},icon:Icon(Icons.arrow_back_ios,color: AppColors.textblueColor,
+              size: 18.r) ,
           )
         ),
         backgroundColor: AppColors.white,

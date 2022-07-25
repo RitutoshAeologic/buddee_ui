@@ -34,7 +34,8 @@ class _ResetPasswordState extends State<ResetPassword> {
         leading: Padding(
             padding:  EdgeInsets.only(left: 32,),
             child: IconButton(
-              onPressed: (){Get.back();},icon:Icon(Icons.arrow_back_ios,color: AppColors.black,) ,
+              onPressed: (){Get.back();},icon:Icon(Icons.arrow_back_ios,
+              color: AppColors.textblueColor,size: 18.r,) ,
             )
         ),
         backgroundColor: AppColors.white,
@@ -45,7 +46,7 @@ class _ResetPasswordState extends State<ResetPassword> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: ScreenUtil().setHeight(45),),
+              SizedBox(height: ScreenUtil().setHeight(51.7),),
               Center(child: SvgPicture.asset(AppIcons.resetpass,
                   height: ScreenUtil().setHeight(161),
                // width: ScreenUtil().setWidth(199),
@@ -64,7 +65,7 @@ class _ResetPasswordState extends State<ResetPassword> {
               SizedBox(height: ScreenUtil().setHeight(19),),
               Text(AppStrings.confirmpasswordText,style:AppTextStyle.text3 ),
               SizedBox(height: ScreenUtil().setHeight(8),),
-              GrayGetTextField(hint: AppStrings.confirmpasswordText , obscure: true,),
+              GrayGetTextField(hint: AppStrings.enterPasswordText , obscure: true,),
 
               SizedBox(height: ScreenUtil().setHeight(24),),
               MaterialButtonBox(title: AppStrings.submitText, onTap: (){
@@ -83,7 +84,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                       style: AppTextStyle.text7,
                     ),
                     onPressed: () {
-                      Get.to(SignUp());
+                      Get.to(()=>SignUp());
                       //signup screen
                     },
                   )

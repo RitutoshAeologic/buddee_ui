@@ -31,7 +31,7 @@ class _AddNewHobbieState extends State<AddNewHobbie> {
         leading: Padding(
           padding:  EdgeInsets.only(left: 25.06,),
           child: IconButton(
-            onPressed: (){Get.back();},icon:Icon(Icons.arrow_back_ios,color: AppColors.black,) ,
+            onPressed: (){Get.back();},icon:Icon(Icons.arrow_back_ios,color: AppColors.backarrow,size: 18.r) ,
           )
         ),
         backgroundColor: AppColors.white,
@@ -120,7 +120,7 @@ class _AddNewHobbieState extends State<AddNewHobbie> {
               Padding(
                 padding: const EdgeInsets.only(left:16.0,right: 14),
                 child: MaterialButtonBox(title: AppStrings.nextstepText, onTap: (){
-                  Get.to(AddedHobbies());
+                  Get.to(()=>AddedHobbies());
                 }),
               )
 

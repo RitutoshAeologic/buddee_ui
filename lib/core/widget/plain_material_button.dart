@@ -20,11 +20,11 @@ class PlainMaterialButtonBox extends StatelessWidget {
       MaterialButton(
            color: AppColors.white,
             onPressed: onTap,
-            height: ScreenUtil().setHeight(50),
+            height: ScreenUtil().setHeight(54),
             minWidth: MediaQuery.of(context).size.width,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(40),
-            side: BorderSide(color: AppColors.signInColor,width: 1.5)
+            side: BorderSide(color: AppColors.signInColor,width: 2)
             ),
             child:
             Text(title,

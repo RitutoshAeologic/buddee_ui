@@ -16,7 +16,7 @@ class AppStrings {
   static const String newpasswordText                     = 'New Password';
   static const String confirmpasswordText              = 'Confirm Password';
   static const String enterPasswordText                = 'Enter your password';
-  static const String forgetPasswordText               = 'Forget your password?';
+  static const String forgetPasswordText               = 'Forgot your password?';
   static const String orWithText                       = '  Or with  ';
   static const String googleSignInText                 = 'Sign in with Google';
   static const String facebookSignInText               = 'Sign in with Facebook';

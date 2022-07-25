@@ -27,7 +27,7 @@ class _SaveHobbieState extends State<SaveHobbie> {
         elevation: 0,
         leading: Padding(
           padding:  EdgeInsets.only(left: 25.06,),
-          child: Icon(Icons.arrow_back_ios,color: AppColors.black,),
+          child: Icon(Icons.arrow_back_ios,color: AppColors.backarrow,size: 18.r),
         ),
         backgroundColor: AppColors.white,
       ),

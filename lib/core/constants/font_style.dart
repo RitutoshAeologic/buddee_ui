@@ -69,7 +69,7 @@ class AppTextStyle {
   static TextStyle lightgreytext = TextStyle(
       fontSize: 16.sp,
       fontWeight: FontWeight.w400,
-      fontFamily: 'Poppins',
+      fontFamily: 'PoppinsR',
       color: AppColors.lightgreyTextColor
   );
 

@@ -32,100 +32,106 @@ class _AddedHobbiesState extends State<AddedHobbies> {
         leading: Padding(
           padding:  EdgeInsets.only(left: 25.06,),
           child: IconButton(
-            onPressed: (){Get.back();},icon:Icon(Icons.arrow_back_ios,color: AppColors.black,) ,
+            onPressed: (){Get.back();},icon:Icon(Icons.arrow_back_ios,color: AppColors.backarrow,size: 18.r) ,
           )
         ),
         backgroundColor: AppColors.white,
       ),
       body:
-      Padding(
-        padding: EdgeInsets.symmetric(horizontal: 32.0,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(height: ScreenUtil().setHeight(28.07),),
-            Center(child: Text(AppStrings.addHobbies,style: AppTextStyle.blueboldtext )),
-            SizedBox(height: ScreenUtil().setHeight(36),),
-            Center(child: Text('You have three hobbies',style: AppTextStyle.text9,)),
-            SizedBox(height: ScreenUtil().setHeight(24),),
+      SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 32.0,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: ScreenUtil().setHeight(28.07),),
+              Center(child: Text(AppStrings.addHobbies,style: AppTextStyle.blueboldtext )),
+              SizedBox(height: ScreenUtil().setHeight(36),),
+              Center(child: Text('You have three hobbies',style: AppTextStyle.text9,)),
+              SizedBox(height: ScreenUtil().setHeight(24),),
 
-           GridView.builder(scrollDirection: Axis.vertical,
-               shrinkWrap: true,
-               itemCount: 3,
-               //temp.length,
-               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                   crossAxisCount: 2,
-                   childAspectRatio: 10 / 2,
-                   crossAxisSpacing: 10.0,
-                   mainAxisSpacing: 14.0
-               ),
-               itemBuilder: (BuildContext context, int index){
-             return
-               Container(
-               height: ScreenUtil().setHeight(32),
-               width: ScreenUtil().setWidth(152),
-               decoration: BoxDecoration(
-                 gradient: LinearGradient(
-                   colors: [
-                     AppColors.genderbg1Color,
-                     AppColors.genderbg2Color,
+             GridView.builder(scrollDirection: Axis.vertical,
+                 shrinkWrap: true,
+                 itemCount: 3,
+                 //temp.length,
+                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                     crossAxisCount: 2,
+                     childAspectRatio: 10 / 2,
+                     crossAxisSpacing: 10.0,
+                     mainAxisSpacing: 14.0,
+                   mainAxisExtent: 32,
+                 ),
+                 itemBuilder: (BuildContext context, int index){
+               return
+                 Container(
+                // height: ScreenUtil().setHeight(32),
+                // width: ScreenUtil().setWidth(152),
+                 decoration: BoxDecoration(
+                   gradient: LinearGradient(
+                     colors: [
+                       AppColors.genderbg1Color,
+                       AppColors.genderbg2Color,
+                     ],
+                   ),
+                   borderRadius: const BorderRadius.all(
+                     Radius.circular(8.0),
+                   ),
+
+                 ),
+                 child:Row(
+                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                   children: [
+                     Padding(
+                       padding: const EdgeInsets.symmetric(vertical: 4.0,horizontal: 9.0),
+                       child: Text('Badminton', style: AppTextStyle.text10,),
+                     ),
+                     IconButton(onPressed: (){
+                       temp.removeAt(index);
+                     }, icon: SvgPicture.asset(AppIcons.delete,
+                     height: ScreenUtil().setHeight(20),
+                     width: ScreenUtil().setWidth(20),color: AppColors.textblueColor,),
+                     ),
                    ],
                  ),
-                 borderRadius: const BorderRadius.all(
-                   Radius.circular(8.0),
-                 ),
+               );
 
-               ),
-               child:Row(
-                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                 children: [
-                   Padding(
-                     padding: const EdgeInsets.symmetric(vertical: 4.0,horizontal: 9.0),
-                     child: Text('Badminton', style: AppTextStyle.text10,),
-                   ),
-                   IconButton(onPressed: (){
-                     temp.removeAt(index);
-                   }, icon: SvgPicture.asset(AppIcons.delete)),
-                 ],
-               ),
-             );
+                 }),
 
-               }),
-
-            SizedBox(height: ScreenUtil().setHeight(15),),
+              SizedBox(height: ScreenUtil().setHeight(15),),
 
 
-            // Container(
-            //   height: ScreenUtil().setHeight(114),
-            //   width: ScreenUtil().setWidth(343),
-            //   child: TextField(
-            //     maxLines: 10,
-            //     decoration: InputDecoration(
-            //       border: OutlineInputBorder(
-            //         borderRadius: BorderRadius.circular(12.r),
-            //         borderSide: BorderSide(color: AppColors.lightgreyTextColor, width: 2),
-            //       ),
-            //       enabledBorder: OutlineInputBorder(
-            //         borderRadius: BorderRadius.circular(12.r),
-            //         borderSide: BorderSide(color: AppColors.lightgreyTextColor, width: 2),
-            //       ),
-            //       filled: true,
-            //       fillColor: AppColors.white,
-            //       hintText: 'Hobbies Description',
-            //       hintStyle: AppTextStyle.text3,
-            //       contentPadding: EdgeInsets.symmetric(horizontal: 16.w,vertical: 14.h),
-            //     ),
-            //   ),
-            // ),
-            SizedBox(height: ScreenUtil().setHeight(220),),
-            PlainMaterialButtonBox(title: AppStrings.addnewhobbyText, onTap: (){}),
-            SizedBox(height: ScreenUtil().setHeight(24),),
-            MaterialButtonBox(title: AppStrings.nextstepText, onTap: (){
-              Get.to(AddPhoto());
-            })
+              // Container(
+              //   height: ScreenUtil().setHeight(114),
+              //   width: ScreenUtil().setWidth(343),
+              //   child: TextField(
+              //     maxLines: 10,
+              //     decoration: InputDecoration(
+              //       border: OutlineInputBorder(
+              //         borderRadius: BorderRadius.circular(12.r),
+              //         borderSide: BorderSide(color: AppColors.lightgreyTextColor, width: 2),
+              //       ),
+              //       enabledBorder: OutlineInputBorder(
+              //         borderRadius: BorderRadius.circular(12.r),
+              //         borderSide: BorderSide(color: AppColors.lightgreyTextColor, width: 2),
+              //       ),
+              //       filled: true,
+              //       fillColor: AppColors.white,
+              //       hintText: 'Hobbies Description',
+              //       hintStyle: AppTextStyle.text3,
+              //       contentPadding: EdgeInsets.symmetric(horizontal: 16.w,vertical: 14.h),
+              //     ),
+              //   ),
+              // ),
+              SizedBox(height: ScreenUtil().setHeight(220),),
+              PlainMaterialButtonBox(title: AppStrings.addnewhobbyText, onTap: (){}),
+              SizedBox(height: ScreenUtil().setHeight(24),),
+              MaterialButtonBox(title: AppStrings.nextstepText, onTap: (){
+                Get.to(AddPhoto());
+              })
 
-          ],
+            ],
+          ),
         ),
       ),
       backgroundColor: AppColors.white,
