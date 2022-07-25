@@ -60,7 +60,7 @@ class _AddedHobbiesState extends State<AddedHobbies> {
                      childAspectRatio: 10 / 2,
                      crossAxisSpacing: 10.0,
                      mainAxisSpacing: 14.0,
-                   mainAxisExtent: 32,
+                   mainAxisExtent: 37,
                  ),
                  itemBuilder: (BuildContext context, int index){
                return
@@ -90,7 +90,8 @@ class _AddedHobbiesState extends State<AddedHobbies> {
                        temp.removeAt(index);
                      }, icon: SvgPicture.asset(AppIcons.delete,
                      height: ScreenUtil().setHeight(20),
-                     width: ScreenUtil().setWidth(20),color: AppColors.textblueColor,),
+                     width: ScreenUtil().setWidth(20),color: AppColors.textblueColor,
+                     fit: BoxFit.fitWidth,),
                      ),
                    ],
                  ),
