@@ -7,6 +7,7 @@ class AppStrings {
   static const String signInTitleText                  = 'SIGN IN';
   static const String signUpText                       = 'SIGN UP';
   static const String lcsignUpText                       = 'Sign up';
+  static const String lcsignInText                       = 'Sign in';
   static const String createYourAccountText            = 'Create your account';
   static const String createAccountText                = 'CREATE ACCOUNT';
   static const String emailAddressText                 = 'Email address';
@@ -14,12 +15,13 @@ class AppStrings {
   static const String passwordText                     = 'Password';
   static const String newpasswordText                     = 'New Password';
   static const String confirmpasswordText              = 'Confirm Password';
-  static const String enterPasswordText                = 'Enter Your Password';
+  static const String enterPasswordText                = 'Enter your password';
   static const String forgetPasswordText               = 'Forget your password?';
-  static const String orWithText                       = 'Or with';
+  static const String orWithText                       = '  Or with  ';
   static const String googleSignInText                 = 'Sign in with Google';
   static const String facebookSignInText               = 'Sign in with Facebook';
   static const String dontAccountText                  = 'Don\'t have account? Let\'s';
+  static const String doHaveAccountText                = 'Do you have an account? Let\'s';
   static const String signUpTitleText                  = 'Sign up';
   static const String tellUsText                       = 'Tell us a bit about you';
   static const String nameText                         = 'Name';
@@ -47,6 +49,6 @@ class AppStrings {
   static const String checkemailsubtitleText            = 'We have send a password recover\n instructions to your Email.';
   static const String skipconfirmText                   = 'SKIP, I\'LL CONFIRM LATER';
   static const String resetpassText                     = 'Reset \n password';
- // static const String mainphotoText                     = 'Main photo';
+  static const String editphotoText                     = 'You can set this photo as the main one';
 }
 

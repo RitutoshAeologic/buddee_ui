@@ -35,7 +35,7 @@ class _SignUpState extends State<SignUp> {
           padding:  EdgeInsets.only(left: 25.06,),
           child:
           IconButton(
-            onPressed: (){Get.back();},icon:Icon(Icons.arrow_back_ios,color: AppColors.black,) ,
+            onPressed: (){Get.back();},icon:Icon(Icons.arrow_back_ios,color: AppColors.backarrow,) ,
           )
         ),
         backgroundColor: AppColors.white,
@@ -58,7 +58,7 @@ class _SignUpState extends State<SignUp> {
                 Center(
                   child: Text(AppStrings.helloText,style: AppTextStyle.helloAgaintext ),
                 ),
-                SizedBox(height: ScreenUtil().setHeight(20),),
+                SizedBox(height: ScreenUtil().setHeight(8),),
                 Center(
                   child: Text(
                       AppStrings.createYourAccountText,style:AppTextStyle.signInAccount ),
@@ -85,32 +85,32 @@ class _SignUpState extends State<SignUp> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     SvgPicture.asset(AppIcons.dot,
-                      height: ScreenUtil().setWidth(2),
+                      width: ScreenUtil().setWidth(122),
                     ),
                     Text(AppStrings.orWithText, style: AppTextStyle.text5),
                     SvgPicture.asset(AppIcons.dot,
-                      height: ScreenUtil().setWidth(2),
+                      width: ScreenUtil().setWidth(122),
                     ),
                   ],
                 ),
                 SizedBox(height: ScreenUtil().setHeight(24),),
-                TextButtonBox(title: AppStrings.googleSignInText, onTap: (){}, icon: AppIcons.google),
+                TextButtonBox(title: AppStrings.googleSignInText, onTap: (){}, icon: AppIcons.googlepng),
                 SizedBox(height: ScreenUtil().setHeight(16),),
-                TextButtonBox(title: AppStrings.facebookSignInText, onTap: (){}, icon: AppIcons.fb),
+                TextButtonBox(title: AppStrings.facebookSignInText, onTap: (){}, icon: AppIcons.fbpng),
                 SizedBox(height: ScreenUtil().setHeight(32),),
                 Row(
                   children: <Widget>[
-                    Text(AppStrings.dontAccountText,
+                    Text(AppStrings.doHaveAccountText,
                         style:
-                        AppTextStyle.text4
+                        AppTextStyle.dohaveaccount
                     ),
                     TextButton(
                       child:  Text(
-                          'Sign in',
+                      AppStrings.lcsignInText,
                           style: AppTextStyle.text7
                       ),
                       onPressed: () {
-                        Get.to(SignInScreen(),);
+                        Get.to(() => SignInScreen(),);
                         //signup screen
                       },
                     )

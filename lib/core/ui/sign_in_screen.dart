@@ -35,7 +35,7 @@ class _SignInScreenState extends State<SignInScreen> {
         leading: Padding(
           padding:  EdgeInsets.only(left: 32,),
           child: IconButton(
-            onPressed: (){Get.back();},icon:Icon(Icons.arrow_back_ios,color: AppColors.black,) ,
+            onPressed: (){Get.back();},icon:Icon(Icons.arrow_back_ios,color: AppColors.textblueColor,) ,
           )
         ),
         backgroundColor: AppColors.white,
@@ -46,7 +46,7 @@ class _SignInScreenState extends State<SignInScreen> {
           child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: ScreenUtil().setHeight(10),),
+              SizedBox(height: ScreenUtil().setHeight(17.07),),
               Center(
                 child: Text(AppStrings.helloAgainText ,style: AppTextStyle.helloAgaintext ),
               ),
@@ -55,15 +55,15 @@ class _SignInScreenState extends State<SignInScreen> {
                 child: Text(
                   AppStrings.singInAccountText,style:AppTextStyle.signInAccount ),
               ),
-              SizedBox(height: ScreenUtil().setHeight(28),),
+              SizedBox(height: ScreenUtil().setHeight(34),),
               Text(AppStrings.emailAddressText,style: AppTextStyle.text3 ),
               SizedBox(height: ScreenUtil().setHeight(8),),
               GetTextField(hint: AppStrings.demoEmailText, obscure: false,),
-              SizedBox(height: ScreenUtil().setHeight(18),),
+              SizedBox(height: ScreenUtil().setHeight(21),),
               Text(AppStrings.passwordText,style:AppTextStyle.text3 ),
               SizedBox(height: ScreenUtil().setHeight(8),),
               GetTextField(hint: AppStrings.enterPasswordText , obscure: true,),
-              SizedBox(height: ScreenUtil().setHeight(12)),
+              SizedBox(height: ScreenUtil().setHeight(11)),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
@@ -76,28 +76,28 @@ class _SignInScreenState extends State<SignInScreen> {
                     ),
                     )
               ],),
-              SizedBox(height: ScreenUtil().setHeight(20),),
+              SizedBox(height: ScreenUtil().setHeight(24),),
               MaterialButtonBox(title: AppStrings.signInTitleText, onTap: (){
                 Get.to(SignUpAbout());
               }),
-              SizedBox(height: ScreenUtil().setHeight(24),),
+              SizedBox(height: ScreenUtil().setHeight(29),),
             //  Divider(thickness:2,color: Colors.grey,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   SvgPicture.asset(AppIcons.dot,
-                  height: ScreenUtil().setWidth(2),
+                  width: ScreenUtil().setWidth(122),
                   ),
                   Text(AppStrings.orWithText, style: AppTextStyle.text5),
                   SvgPicture.asset(AppIcons.dot,
-                    height: ScreenUtil().setWidth(2),
+                    width: ScreenUtil().setWidth(122),
                   ),
                 ],
               ),
-              SizedBox(height: ScreenUtil().setHeight(20),),
-              TextButtonBox(title: AppStrings.googleSignInText, onTap: (){}, icon: AppIcons.google),
-              SizedBox(height: ScreenUtil().setHeight(12),),
-              TextButtonBox(title: AppStrings.facebookSignInText, onTap: (){}, icon: AppIcons.fb),
+              SizedBox(height: ScreenUtil().setHeight(24),),
+              TextButtonBox(title: AppStrings.googleSignInText, onTap: (){}, icon: AppIcons.googlepng),
+              SizedBox(height: ScreenUtil().setHeight(16),),
+              TextButtonBox(title: AppStrings.facebookSignInText, onTap: (){}, icon: AppIcons.fbpng),
               SizedBox(height: ScreenUtil().setHeight(32),),
               Row(
                 children: <Widget>[

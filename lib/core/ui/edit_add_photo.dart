@@ -31,7 +31,7 @@ class _EditAddPhotoState extends State<EditAddPhoto> {
         leading: Padding(
           padding:  EdgeInsets.only(left: 25.06,),
           child: IconButton(
-            onPressed: (){Get.back();},icon:Icon(Icons.arrow_back_ios,color: AppColors.black,) ,
+            onPressed: (){Get.back();},icon:Icon(Icons.arrow_back_ios,color: AppColors.backarrow,) ,
           )
         ),
         backgroundColor: AppColors.white,
@@ -101,7 +101,11 @@ class _EditAddPhotoState extends State<EditAddPhoto> {
                   }
               ),
 
-              SizedBox(height: ScreenUtil().setHeight(174),),
+              SizedBox(height: ScreenUtil().setHeight(96),),
+
+            Center(child: Text(AppStrings.editphotoText,style: AppTextStyle.text12,)),
+
+              SizedBox(height: ScreenUtil().setHeight(24),),
 
 
 

@@ -20,8 +20,8 @@ class AppColors {
   static const Color mainphototextColor = Color(0xff58FFC3);
   static const Color deletetextColor = Color(0xffFF5858);
   static const Color orwithtextColor = Color(0xff9B9B9B);
-
-
+  static const Color dohaveaccount = Color(0xff818181);
+  static const Color backarrow = Color(0xffAAB2B7);
 
 
 

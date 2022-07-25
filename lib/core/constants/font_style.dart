@@ -2,158 +2,177 @@ import 'dart:ui';
 
 import 'package:buddee_ui/core/constants/font_constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'colors.dart';
 
 class AppTextStyle {
-  static TextStyle text1 =  const TextStyle(
-      fontWeight: FontWeight.w500,
-      fontSize: 20,
-      fontFamily: 'PoppinsR',
+  static TextStyle text1 =  TextStyle(
+      fontWeight: FontWeight.w400,
+      fontSize: 22.sp,
+      fontFamily: 'Poppins',
       color: AppColors.Onboardsubtitle,
     fontStyle: FontStyle.normal
   );
 
-  static TextStyle materialwidget = const TextStyle(
+  static TextStyle materialwidget =  TextStyle(
       fontWeight: FontWeight.w600,
       color: AppColors.white,
-      fontSize: 20,
+      fontSize: 20.sp,
       fontFamily: 'PoppinsR',
     fontStyle: FontStyle.normal
   );
   //
-  static TextStyle text2 = const TextStyle(
+  static TextStyle text2 =  TextStyle(
       fontWeight: FontWeight.w600,
       color: AppColors.signInColor,
-      fontSize: 20,
+      fontSize: 20.sp,
       fontFamily: 'PoppinsR');
 
-  static TextStyle helloAgaintext = const TextStyle(
-  fontSize: 40,
+  static TextStyle helloAgaintext = TextStyle(
+  fontSize: 40.sp,
   fontWeight: FontWeight.w500,
       fontFamily: 'PoppinsR',
       color: AppColors.textblueColor,
   );
 
- static TextStyle forgetyourpasswordtext = const  TextStyle(
+ static TextStyle forgetyourpasswordtext =   TextStyle(
   fontWeight: FontWeight.w400,
-  fontSize: 12,
+  fontSize: 12.sp,
   decoration: TextDecoration.underline,
    color: AppColors.greyTextColor,
    fontFamily: 'Poppins',
   );
 
-  static TextStyle signInAccount = const TextStyle(
-      fontSize: 14,
+  static TextStyle signInAccount =  TextStyle(
+      fontSize: 14.sp,
       fontWeight: FontWeight.w400,
       fontFamily: 'Poppins',
-    color: AppColors.lightgreyTextColor,
+    color: AppColors.greyTextColor,
 
   );
 
 
-  static TextStyle text3 = const TextStyle(
-      fontSize: 16,
+  static TextStyle text3 =  TextStyle(
+      fontSize: 16.sp,
       fontWeight: FontWeight.w400,
       fontFamily: 'Poppins',
     color: AppColors.textblueColor,
   );
-  static TextStyle lightbluetext = const TextStyle(
-    fontSize: 16,
+  static TextStyle lightbluetext =  TextStyle(
+    fontSize: 16.sp,
     fontWeight: FontWeight.w400,
     fontFamily: 'Poppins',
       color: AppColors.textblueColor
   );
 
-  static TextStyle lightgreytext = const TextStyle(
-      fontSize: 16,
+  static TextStyle lightgreytext = TextStyle(
+      fontSize: 16.sp,
       fontWeight: FontWeight.w400,
       fontFamily: 'Poppins',
       color: AppColors.lightgreyTextColor
   );
 
-  static TextStyle text4 = const TextStyle(
+  static TextStyle text4 =  TextStyle(
       fontWeight: FontWeight.w400,
-      fontSize: 12,
+      fontSize: 12.sp,
      // decoration: TextDecoration.underline,
-      fontFamily: 'Poppins'
+      fontFamily: 'Poppins',
+    color: AppColors.greyTextColor
+  );
+  static TextStyle dohaveaccount =  TextStyle(
+      fontWeight: FontWeight.w400,
+      fontSize: 12.sp,
+      // decoration: TextDecoration.underline,
+      fontFamily: 'Poppins',
+      color: AppColors.dohaveaccount
   );
 
-  static TextStyle text5 = const TextStyle(
+  static TextStyle text5 =  TextStyle(
       fontWeight: FontWeight.w500,
-      fontSize: 12,
+      fontSize: 12.sp,
       fontFamily: 'Poppins',
     color: AppColors.orwithtextColor
   );
 
-  static TextStyle text6 = const TextStyle(
-      fontSize: 16,
+  static TextStyle text6 =  TextStyle(
+      fontSize: 16.sp,
       fontWeight: FontWeight.w500,
-      fontFamily: 'Poppins'
+      fontFamily: 'PoppinsR',
+    color: AppColors.textblueColor
   );
 
-  static TextStyle text7 = const TextStyle(
-      fontSize: 12,
+  static TextStyle text7 = TextStyle(
+      fontSize: 12.sp,
       fontWeight: FontWeight.w500,
       fontFamily: 'Poppins',
     color: AppColors.signuptextColor,
     decoration: TextDecoration.underline
   );
-  static TextStyle maniPhototext = const TextStyle(
-      fontSize: 12,
+  static TextStyle maniPhototext = TextStyle(
+      fontSize: 12.sp,
       fontWeight: FontWeight.w500,
       fontFamily: 'Poppins',
       color: AppColors.mainphototextColor
   );
 
-  static TextStyle deletetext = const TextStyle(
-      fontSize: 12,
+  static TextStyle deletetext =  TextStyle(
+      fontSize: 12.sp,
       fontWeight: FontWeight.w500,
       fontFamily: 'Poppins',
       color: AppColors.deletetextColor
   );
 
-  static TextStyle text8 = const TextStyle(
-      fontSize: 28,
+  static TextStyle text8 =  TextStyle(
+      fontSize: 28.sp,
       fontWeight: FontWeight.w500,
-      fontFamily: 'Poppins'
+      fontFamily: 'Poppins',
+    color: AppColors.textblueColor,
   );
-  static TextStyle text10 = const TextStyle(
-      fontSize: 16,
+  static TextStyle text10 =  TextStyle(
+      fontSize: 16.sp,
       fontWeight: FontWeight.w600,
       fontFamily: 'PoppinsR',
     color: AppColors.textblueColor
   );
-  static TextStyle blueboldtext = const TextStyle(
-      fontSize: 28,
+  static TextStyle blueboldtext = TextStyle(
+      fontSize: 28.sp,
       fontWeight: FontWeight.w500,
       fontFamily: 'Poppins',
       color: AppColors.textblueColor
   );
 
-  static TextStyle genderText = const TextStyle(
-      fontSize: 16,
+  static TextStyle genderText =  TextStyle(
+      fontSize: 16.sp,
       fontWeight: FontWeight.w500,
       fontFamily: 'Poppins',
     color: AppColors.black
   );
-  static TextStyle text9 = const TextStyle(
-      fontSize: 16,
+  static TextStyle text9 =  TextStyle(
+      fontSize: 16.sp,
       fontWeight: FontWeight.w500,
       fontFamily: 'Poppins',
       color: AppColors.textblueColor
   );
-  static TextStyle plainmaterialtext = const TextStyle(
-      fontSize: 16,
+  static TextStyle plainmaterialtext =  TextStyle(
+      fontSize: 16.sp,
       fontWeight: FontWeight.w600,
       fontFamily: 'PoppinsR',
       color: AppColors.signInColor
   );
 
-  static TextStyle text11 = const  TextStyle(
+  static TextStyle text11 =   TextStyle(
       fontWeight: FontWeight.w400,
-      fontSize: 14,
+      fontSize: 14.sp,
       color: AppColors.greyTextColor,
     fontFamily: 'Poppins',
+  );
+
+  static TextStyle text12 =  TextStyle(
+      fontWeight: FontWeight.w500,
+      fontSize: 12.sp,
+      // decoration: TextDecoration.underline,
+      fontFamily: 'Poppins',
+      color: AppColors.greyTextColor
   );
 }

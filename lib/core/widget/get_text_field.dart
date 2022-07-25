@@ -17,17 +17,21 @@ class GetTextField extends StatelessWidget {
       decoration: InputDecoration(
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12.r),
-          borderSide: BorderSide(color: AppColors.lightgreyTextColor, width: 2),
+          borderSide: BorderSide(color: AppColors.lightgreyTextColor, width: 1),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12.r),
-          borderSide: BorderSide(color: AppColors.lightgreyTextColor, width: 2),
+          borderSide: BorderSide(color: AppColors.lightgreyTextColor, width: 1),
         ),
+       focusedBorder: OutlineInputBorder(
+         borderRadius: BorderRadius.circular(12.r),
+         borderSide: BorderSide(color: AppColors.lightgreyTextColor, width: 1),
+       ),
         filled: true,
         fillColor: AppColors.white,
         hintText: hint,
-        hintStyle: AppTextStyle.text3,
-        contentPadding: EdgeInsets.symmetric(horizontal: 16.w,vertical: 14.h),
+        hintStyle: AppTextStyle.lightgreytext,
+        contentPadding: EdgeInsets.symmetric(horizontal: 12.w,vertical: 15.h),
       ),
       obscureText: obscure,
     );

@@ -18,10 +18,10 @@ class TextButtonBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return  TextButton(onPressed: onTap,
       style: ButtonStyle(
-          side: MaterialStateProperty.all(BorderSide(color: AppColors.black,width: 2)),
+          side: MaterialStateProperty.all(BorderSide(color: AppColors.textblueColor,width: 2)),
           backgroundColor: MaterialStateProperty.all(AppColors.white),
           foregroundColor: MaterialStateProperty.all(AppColors.black),
-          minimumSize:  MaterialStateProperty.all(Size(double.infinity, 58)),
+          minimumSize:  MaterialStateProperty.all(Size(MediaQuery.of(context).size.width, 58)),
           shape: MaterialStateProperty.all(
               RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(40.0))),
@@ -34,8 +34,7 @@ class TextButtonBox extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SvgPicture.asset(icon,
-            height: ScreenUtil().setWidth(2),),
+          Image.asset(icon,scale: 42.sp,),
           SizedBox(width: 10.w,),
           Text(title),
         ],

@@ -47,7 +47,7 @@ class _SignUpAboutState extends State<SignUpAbout> {
           leading: Padding(
             padding:  EdgeInsets.only(left: 25.06,),
             child: IconButton(
-              onPressed: (){Get.back();},icon:Icon(Icons.arrow_back_ios,color: AppColors.black,) ,
+              onPressed: (){Get.back();},icon:Icon(Icons.arrow_back_ios,color: AppColors.backarrow,) ,
             )
           ),
           backgroundColor: AppColors.white,
@@ -67,22 +67,56 @@ class _SignUpAboutState extends State<SignUpAbout> {
     // BottomNavigationBarItem(icon: SvgPicture.asset(AppIcons.comment),label: ""),
     // BottomNavigationBarItem(icon: SvgPicture.asset(AppIcons.user),label: ""),
     // ],),
-      body:  Padding(
-        padding: EdgeInsets.symmetric(horizontal: 32,
-            vertical: 10),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: ScreenUtil().setHeight(28),),
-              Center(child: Text(AppStrings.tellUsText,style: AppTextStyle.text8)),
-              SizedBox(height: ScreenUtil().setHeight(29),),
-              Text(AppStrings.nameText,style: AppTextStyle.text3 ),
-              SizedBox(height: ScreenUtil().setHeight(8),),
-              GetTextField(hint: AppStrings.nameText, obscure: false,),
-              SizedBox(height: ScreenUtil().setHeight(21),),
-              Text(AppStrings.dobText,style:AppTextStyle.text3 ),
-              SizedBox(height: ScreenUtil().setHeight(8),),
+      body:  SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: ScreenUtil().setHeight(28),),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              child: Center(child: Text(AppStrings.tellUsText,style: AppTextStyle.text8,textAlign: TextAlign.center,)),
+            ),
+            SizedBox(height: ScreenUtil().setHeight(29),),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 32.0),
+              child: Text(AppStrings.nameText,style: AppTextStyle.text3 ),
+            ),
+            SizedBox(height: ScreenUtil().setHeight(8),),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 32.0),
+              child:  TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12.r),
+                    borderSide: BorderSide(color: AppColors.lightgreyTextColor, width: 2),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12.r),
+                    borderSide: BorderSide(color: AppColors.lightgreyTextColor, width: 2),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12.r),
+                    borderSide: BorderSide(color: AppColors.lightgreyTextColor, width: 1),
+                  ),
+                  filled: true,
+                  fillColor: AppColors.white,
+                  hintText: AppStrings.nameText,
+                  hintStyle: AppTextStyle.text3,
+
+                  contentPadding: EdgeInsets.symmetric(horizontal: 16.w,vertical: 14.h),
+                ),
+                obscureText: false,
+              ),
+            ),
+            SizedBox(height: ScreenUtil().setHeight(21),),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 32.0),
+              child: Text(AppStrings.dobText,style:AppTextStyle.text3 ),
+            ),
+            SizedBox(height: ScreenUtil().setHeight(8),),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 32.0),
+              child:
               TextField(
                 controller: dateinput,
                 decoration: InputDecoration(
@@ -94,12 +128,16 @@ class _SignUpAboutState extends State<SignUpAbout> {
                     borderRadius: BorderRadius.circular(12.r),
                     borderSide: BorderSide(color: AppColors.lightgreyTextColor, width: 2),
                   ),
+                  focusedBorder:OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12.r),
+                    borderSide: BorderSide(color: AppColors.lightgreyTextColor, width: 1),
+                  ),
                   filled: true,
                   fillColor: AppColors.white,
                   hintText: AppStrings.dobText,
                   hintStyle: AppTextStyle.text3,
                   suffixIcon: Padding(
-                    padding: EdgeInsets.only(right: 145),
+                    padding: EdgeInsets.only(right: 135),
                     child: IconButton(
                       alignment: Alignment.center,
                       onPressed: () async {
@@ -135,10 +173,16 @@ class _SignUpAboutState extends State<SignUpAbout> {
                 ),
                 obscureText: false,
               ),
-              SizedBox(height: ScreenUtil().setHeight(21),),
-              Text(AppStrings.genderText, style: AppTextStyle.text3, ),
-              SizedBox(height: ScreenUtil().setHeight(8),),
-              Container(
+            ),
+            SizedBox(height: ScreenUtil().setHeight(21),),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 32.0),
+              child: Text(AppStrings.genderText, style: AppTextStyle.text3, ),
+            ),
+            SizedBox(height: ScreenUtil().setHeight(8),),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 32.0),
+              child: Container(
                 height: ScreenUtil().setHeight(60),
                 padding: EdgeInsets.all(4),
                 decoration: BoxDecoration(
@@ -234,13 +278,16 @@ class _SignUpAboutState extends State<SignUpAbout> {
                 //   ],
                 // ),
               ),
-              /// Check Height issue,over
-              SizedBox(height: ScreenUtil().setHeight(175)),
-              MaterialButtonBox(title: AppStrings.nextText, onTap: (){
+            ),
+            /// Check Height issue,over
+            SizedBox(height: ScreenUtil().setHeight(175)),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 32.0),
+              child: MaterialButtonBox(title: AppStrings.nextText, onTap: (){
                 Get.to(AddHobbies());
               }),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
       backgroundColor: AppColors.white,
