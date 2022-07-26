@@ -20,11 +20,16 @@ class AppIcons {
   static const String forgotpass      = 'assets/images/svg/forgotpass.svg';
   static const String checkemail      = 'assets/images/svg/checkemail.svg';
   static const String resetpass      = 'assets/images/svg/resetpass.svg';
+  static const String backarrow      = 'assets/images/svg/backarrow.svg';
+  static const String circle      = 'assets/images/svg/circle.svg';
+  static const String close      = 'assets/images/svg/close.svg';
+  static const String forwardarrow      = 'assets/images/svg/forwardarrow.svg';
 
   ///JPG_IMAGES
   static const String onBoardbgjpg              = 'assets/images/jpg/Background.jpg';
   static const String buddeeLogoJpg             = 'assets/images/jpg/Buddee_logo_2 2.jpg';
   static const String googlepng                 = 'assets/images/jpg/google.png';
   static const String fbpng           = 'assets/images/jpg/facebook 1.png';
+  static const String mainprofilebgjpg              = 'assets/images/jpg/mainprofilebgjpg.jpg';
 
 }

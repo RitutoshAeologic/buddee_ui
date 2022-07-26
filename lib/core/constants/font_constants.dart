@@ -32,6 +32,7 @@ class AppStrings {
   static const String nextText                         = 'NEXT STEP';
   static const String addHobbies                       = 'Add hobbies';
   static const String searchText                       = 'Search';
+  static const String searchSettingsText               = 'Search Settings';
   static const String searchTitle                      = 'Search for hobbies';
   static const String lookingText                      = 'Looking for...';
   static const String saveText                         = 'SAVE';
@@ -50,5 +51,11 @@ class AppStrings {
   static const String skipconfirmText                   = 'SKIP, I\'LL CONFIRM LATER';
   static const String resetpassText                     = 'Reset \n password';
   static const String editphotoText                     = 'You can set this photo as the main one';
+  static const String myprofileText                     = 'My Profile';
+  static const String infoText                          = 'Information';
+  static const String hobbiesText                       = 'Hobbies';
+  static const String settingsText                      = 'Search Settings';
+  static const String privacyPolicyText                 = 'Privacy Policy';
+  static const String logoutText                       = 'LOG OUT';
 }
 

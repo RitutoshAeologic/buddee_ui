@@ -175,4 +175,20 @@ class AppTextStyle {
       fontFamily: 'Poppins',
       color: AppColors.greyTextColor
   );
+
+  static TextStyle text13 =   TextStyle(
+    fontWeight: FontWeight.w500,
+    fontSize: 20.sp,
+    color: AppColors.textblueColor,
+    fontFamily: 'Poppins',
+  );
+
+  static TextStyle logouttext =  TextStyle(
+      fontWeight: FontWeight.w600,
+      color: AppColors.textblueColor,
+      fontSize: 20.sp,
+      fontFamily: 'PoppinsR',
+    decoration: TextDecoration.underline
+  );
+
 }
