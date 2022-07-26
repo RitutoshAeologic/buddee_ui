@@ -65,6 +65,18 @@ class AppTextStyle {
     fontFamily: 'Poppins',
       color: AppColors.textblueColor
   );
+  static TextStyle blacktext =  TextStyle(
+      fontSize: 16.sp,
+      fontWeight: FontWeight.w400,
+      fontFamily: 'PoppinsR',
+      color: AppColors.black
+  );
+  static TextStyle agerangetext =  TextStyle(
+      fontSize: 16.sp,
+      fontWeight: FontWeight.w400,
+      fontFamily: 'PoppinsR',
+      color: AppColors.agerange
+  );
 
   static TextStyle lightgreytext = TextStyle(
       fontSize: 16.sp,
@@ -97,8 +109,8 @@ class AppTextStyle {
 
   static TextStyle text6 =  TextStyle(
       fontSize: 16.sp,
-      fontWeight: FontWeight.w500,
-      fontFamily: 'PoppinsR',
+      fontWeight: FontWeight.w400,
+      fontFamily: 'Poppins',
     color: AppColors.textblueColor
   );
 
@@ -151,7 +163,7 @@ class AppTextStyle {
   static TextStyle text9 =  TextStyle(
       fontSize: 16.sp,
       fontWeight: FontWeight.w500,
-      fontFamily: 'Poppins',
+      fontFamily: 'PoppinsR',
       color: AppColors.textblueColor
   );
   static TextStyle plainmaterialtext =  TextStyle(

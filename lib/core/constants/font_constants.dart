@@ -31,11 +31,14 @@ class AppStrings {
   static const String femaleText                       = 'Female';
   static const String nextText                         = 'NEXT STEP';
   static const String addHobbies                       = 'Add hobbies';
+  static const String editHobbies                       = 'Edit hobbies';
+  static const String myHobbies                       = 'My hobbies';
   static const String searchText                       = 'Search';
   static const String searchSettingsText               = 'Search Settings';
   static const String searchTitle                      = 'Search for hobbies';
   static const String lookingText                      = 'Looking for...';
   static const String saveText                         = 'SAVE';
+  static const String applyText                         = 'APPLY';
   static const String addnewhobbyText                  = '+ ADD NEW HOBBY';
   static const String nextstepText                     = 'NEXT STEP';
   static const String addphotosText                     = 'Add photos';
@@ -57,5 +60,10 @@ class AppStrings {
   static const String settingsText                      = 'Search Settings';
   static const String privacyPolicyText                 = 'Privacy Policy';
   static const String logoutText                       = 'LOG OUT';
+  static const String bothText                       = 'Both';
+  static const String distanceText                         = 'Distance';
+  static const String ageText                         = 'Age';
+  static const String discussText                         = 'Let’s discuss';
+  static const String addDescripText                         = 'Add description';
 }
 

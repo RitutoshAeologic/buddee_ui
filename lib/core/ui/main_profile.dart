@@ -1,6 +1,9 @@
 
 
 import 'package:buddee_ui/core/ui/info.dart';
+import 'package:buddee_ui/core/ui/profile_hobby.dart';
+import 'package:buddee_ui/core/ui/profile_privacy.dart';
+import 'package:buddee_ui/core/ui/profile_search.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -30,7 +33,7 @@ class _MainProfileState extends State<MainProfile> {
         child: Column(
           children: [
             Container(
-              height: ScreenUtil().setHeight(580),
+              height: ScreenUtil().setHeight(614),
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                   image: DecorationImage(
@@ -80,40 +83,49 @@ class _MainProfileState extends State<MainProfile> {
                     SizedBox(height: ScreenUtil().setHeight(44),),
                     Padding(
                       padding: const EdgeInsets.only(right: 18.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(AppStrings.hobbiesText,style: AppTextStyle.text13,),
-                          //SizedBox(width:ScreenUtil().setWidth(172) ,),
-                          SvgPicture.asset(AppIcons.circle),
-                          //  SizedBox(width:ScreenUtil().setWidth(18.06) ,),
-                        ],
+                      child: InkWell(
+                        onTap: (){Get.to(()=> ProfileHobby());},
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(AppStrings.hobbiesText,style: AppTextStyle.text13,),
+                            //SizedBox(width:ScreenUtil().setWidth(172) ,),
+                            SvgPicture.asset(AppIcons.circle),
+                            //  SizedBox(width:ScreenUtil().setWidth(18.06) ,),
+                          ],
+                        ),
                       ),
                     ),
                     SizedBox(height: ScreenUtil().setHeight(54),),
                     Padding(
                       padding: const EdgeInsets.only(right: 18.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(AppStrings.searchSettingsText,style: AppTextStyle.text13,),
-                         // SizedBox(width:ScreenUtil().setWidth(172) ,),
-                          SvgPicture.asset(AppIcons.circle),
-                          //  SizedBox(width:ScreenUtil().setWidth(18.06) ,),
-                        ],
+                      child: InkWell(
+                        onTap: (){Get.to(()=>ProfileSearch());},
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(AppStrings.searchSettingsText,style: AppTextStyle.text13,),
+                           // SizedBox(width:ScreenUtil().setWidth(172) ,),
+                            SvgPicture.asset(AppIcons.circle),
+                            //  SizedBox(width:ScreenUtil().setWidth(18.06) ,),
+                          ],
+                        ),
                       ),
                     ),
                     SizedBox(height: ScreenUtil().setHeight(49),),
                     Padding(
                       padding: const EdgeInsets.only(right: 18.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                         Text(AppStrings.privacyPolicyText,style: AppTextStyle.text13,),
-                         // SizedBox(width:ScreenUtil().setWidth(172) ,),
-                          SvgPicture.asset(AppIcons.circle),
-                          //  SizedBox(width:ScreenUtil().setWidth(18.06) ,),
-                        ],
+                      child: InkWell(
+                        onTap: (){Get.to(()=>ProfilePrivacy());},
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                           Text(AppStrings.privacyPolicyText,style: AppTextStyle.text13,),
+                           // SizedBox(width:ScreenUtil().setWidth(172) ,),
+                            SvgPicture.asset(AppIcons.circle),
+                            //  SizedBox(width:ScreenUtil().setWidth(18.06) ,),
+                          ],
+                        ),
                       ),
                     ),
 

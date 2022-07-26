@@ -64,6 +64,7 @@ class _InfoScreenState extends State<InfoScreen> {
                 children: [
                   //  SizedBox(width:ScreenUtil().setWidth(18.06) ,),
                    InkWell(
+                     onTap: (){Get.back();},
                      child: SvgPicture.asset(AppIcons.backarrow,
                         height: ScreenUtil().setHeight(15.86),
                         width: ScreenUtil().setWidth(8.89),

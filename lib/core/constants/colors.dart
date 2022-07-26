@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   static const Color white = Color(0xffFFFFFF);
-  static const Color black = Colors.black;
+  static const Color black = Color(0xff000000);
   static const Color backarrowsvg = Color(0xff222222);
   static const Color Onboardsubtitle = Color(0xff302F34);
   static const Color materialGradient1= Color(0xffFFAB2D);
@@ -23,6 +23,7 @@ class AppColors {
   static const Color orwithtextColor = Color(0xff9B9B9B);
   static const Color dohaveaccount = Color(0xff818181);
   static const Color backarrow = Color(0xffAAB2B7);
+  static const Color agerange = Color(0xff171F24);
 
 
 

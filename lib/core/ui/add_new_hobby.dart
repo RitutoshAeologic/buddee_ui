@@ -85,8 +85,8 @@ class _AddNewHobbieState extends State<AddNewHobbie> {
               ),
 
               SizedBox(height: ScreenUtil().setHeight(15),),
-              Text('Intermediate level, looking for a partner to \n'
-                  'play weekdays after work. Committed but \n'
+              Text('Intermediate level, looking for a partner to '
+                  'play weekdays after work. Committed but'
                   'not too serious',
               style: AppTextStyle.text6,),
               // Container(

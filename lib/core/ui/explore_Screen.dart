@@ -11,7 +11,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text('Page Does\'nt Exist'),
+      child: Text('Explore Page Does\'nt Exist'),
     );
   }
 }
