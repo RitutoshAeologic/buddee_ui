@@ -32,6 +32,7 @@ class AppIcons {
 
   ///JPG_IMAGES
   static const String onBoardbgjpg              = 'assets/images/jpg/Background.jpg';
+  static const String buddeeLogopng             = 'assets/images/jpg/buddee_logo_png.png';
   static const String buddeeLogoJpg             = 'assets/images/jpg/Buddee_logo_2 2.jpg';
   static const String googlepng                 = 'assets/images/jpg/google.png';
   static const String fbpng                     = 'assets/images/jpg/facebook 1.png';

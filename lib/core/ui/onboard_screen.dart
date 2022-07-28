@@ -43,16 +43,15 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
                 children: [
                   Positioned(
                       child:
-    //                     Image.asset(AppIcons.buddeeLogoJpg,
-    //                     width: ScreenUtil().setWidth(450),
-    //                       height: ScreenUtil().setHeight(253),
-    // ),
-                  SvgPicture.asset(AppIcons.buddeeLogo,
-                  height: MediaQuery.of(context).size.height*0.313,
-                 //width: MediaQuery.of(context).size.width*0.375
-                    //ScreenUtil().setWidth(253),
-                  ),
-                    bottom: 50,
+              Image.asset(
+              AppIcons.buddeeLogopng,
+                height: 253,),
+                 //  SvgPicture.asset(AppIcons.buddeeLogo,
+                 //  height: MediaQuery.of(context).size.height*0.313,
+                 // //width: MediaQuery.of(context).size.width*0.375
+                 //    //ScreenUtil().setWidth(253),
+                 //  ),
+                    bottom: 20,
                     left: 20,
                     right: 20,
                     //left:5
