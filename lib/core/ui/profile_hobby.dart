@@ -4,7 +4,6 @@ import 'package:buddee_ui/core/ui/my_profile_list.dart';
 import 'package:buddee_ui/core/ui/profile_select_hobby.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -65,7 +64,7 @@ class _ProfileHobbyState extends State<ProfileHobby> {
             ),
 
             Center(child: Text('You have 1 hobby',style: AppTextStyle.text9,)),
-            SizedBox(height: ScreenUtil().setHeight(24),),
+            SizedBox(height: 24),
             ListView.builder(
               physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,

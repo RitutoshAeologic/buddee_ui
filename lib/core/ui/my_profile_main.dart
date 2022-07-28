@@ -5,7 +5,6 @@ import 'package:buddee_ui/core/ui/my_profile_list.dart';
 import 'package:buddee_ui/core/ui/profile_photo_gallery.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -94,6 +93,7 @@ class _MainMyProfileState extends State<MainMyProfile> {
         child: Container(
           height: 30,
           width: 120,
+          padding: EdgeInsets.only(left: 12,right: 12,),
           decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
@@ -115,28 +115,18 @@ class _MainMyProfileState extends State<MainMyProfile> {
               ]
           ),
           child:
-          MaterialButton(
-            // color: Colors.deepOrangeAccent,
-              onPressed: (){},
-              // height: ScreenUtil().setHeight(48),
-              //minWidth: MediaQuery.of(context).size.width,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(40)),
-              child:
-              Padding(
-                padding: const EdgeInsets.only(top: 2.0,right: 2),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SvgPicture.asset(AppIcons.diamond),
-                    Text('Premium',
-                        // textAlign: TextAlign.center,
-                        style: AppTextStyle.text16
-                    ),
-                  ],
-                ),
-              )
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SvgPicture.asset(AppIcons.diamond,
+             // height: 15,
+              width: 16,),
+              SizedBox(width: 5,),
+              Text('Premium',
+                  // textAlign: TextAlign.center,
+                  style: AppTextStyle.text16
+              ),
+            ],
           ),
         ),
       )
@@ -144,10 +134,7 @@ class _MainMyProfileState extends State<MainMyProfile> {
             )
             ),
 
-            SizedBox(height: ScreenUtil().setHeight(29),),
-
-            //SizedBox(height: ScreenUtil().setHeight(25),),
-          ],
+                      ],
         ),
       ),
     );

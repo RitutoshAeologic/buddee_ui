@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 
 import '../constants/colors.dart';
 import '../constants/font_constants.dart';
@@ -25,7 +23,7 @@ class TextButtonBox extends StatelessWidget {
           shape: MaterialStateProperty.all(
               RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(40.0))),
-          padding: MaterialStateProperty.all(EdgeInsets.symmetric(vertical: 14.h),
+          padding: MaterialStateProperty.all(EdgeInsets.symmetric(vertical: 14),
           ),
           textStyle: MaterialStateProperty.all(AppTextStyle.text6)
       ),
@@ -34,8 +32,8 @@ class TextButtonBox extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(icon,scale: 42.sp,),
-          SizedBox(width: 10.w,),
+          Image.asset(icon,scale: 42,),
+          SizedBox(width: 10,),
           Text(title),
         ],
       ) ,

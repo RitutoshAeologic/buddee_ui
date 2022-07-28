@@ -1,7 +1,6 @@
 import 'package:buddee_ui/core/widget/material_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -81,8 +80,8 @@ class _ProfileSearchState extends State<ProfileSearch> {
                     child: ToggleSwitch(
                       initialLabelIndex: 0,
                       totalSwitches: 3,
-                      minHeight: ScreenUtil().setHeight(48),
-                      minWidth: ScreenUtil().setWidth(96),
+                      minHeight: 48,
+                      minWidth: 96,
                       cornerRadius: (12),
                       radiusStyle: true,
                       customTextStyles: [

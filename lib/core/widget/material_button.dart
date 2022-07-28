@@ -2,7 +2,6 @@ import 'package:buddee_ui/core/constants/colors.dart';
 import 'package:buddee_ui/core/constants/font_style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MaterialButtonBox extends StatelessWidget {
   final String title;
@@ -18,7 +17,7 @@ class MaterialButtonBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return
       Container(
-        height: ScreenUtil().setHeight(58),
+        height: 58,
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [

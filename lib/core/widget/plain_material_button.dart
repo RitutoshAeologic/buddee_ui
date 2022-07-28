@@ -2,7 +2,6 @@ import 'package:buddee_ui/core/constants/colors.dart';
 import 'package:buddee_ui/core/constants/font_style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PlainMaterialButtonBox extends StatelessWidget {
   final String title;
@@ -20,7 +19,7 @@ class PlainMaterialButtonBox extends StatelessWidget {
       MaterialButton(
            color: AppColors.white,
             onPressed: onTap,
-            height: ScreenUtil().setHeight(54),
+            height: 58,
             minWidth: MediaQuery.of(context).size.width,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(40),

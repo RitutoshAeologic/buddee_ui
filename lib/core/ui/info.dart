@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -95,15 +94,15 @@ class _InfoScreenState extends State<InfoScreen> {
               child:  TextField(
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12.r),
+                    borderRadius: BorderRadius.circular(12),
                     borderSide: BorderSide(color: AppColors.lightgreyTextColor, width: 2),
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12.r),
+                    borderRadius: BorderRadius.circular(12),
                     borderSide: BorderSide(color: AppColors.lightgreyTextColor, width: 2),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12.r),
+                    borderRadius: BorderRadius.circular(12),
                     borderSide: BorderSide(color: AppColors.lightgreyTextColor, width: 1),
                   ),
                   filled: true,
@@ -111,7 +110,7 @@ class _InfoScreenState extends State<InfoScreen> {
                   hintText: AppStrings.nameText,
                   hintStyle: AppTextStyle.text3,
 
-                  contentPadding: EdgeInsets.symmetric(horizontal: 16.w,vertical: 14.h),
+                  contentPadding: EdgeInsets.symmetric(horizontal: 16,vertical: 14),
                 ),
                 obscureText: false,
               ),
@@ -126,15 +125,15 @@ class _InfoScreenState extends State<InfoScreen> {
               TextField(
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12.r),
+                    borderRadius: BorderRadius.circular(12),
                     borderSide: BorderSide(color: AppColors.lightgreyTextColor, width: 2),
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12.r),
+                    borderRadius: BorderRadius.circular(12),
                     borderSide: BorderSide(color: AppColors.lightgreyTextColor, width: 2),
                   ),
                   focusedBorder:OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12.r),
+                    borderRadius: BorderRadius.circular(12),
                     borderSide: BorderSide(color: AppColors.lightgreyTextColor, width: 1),
                   ),
                   filled: true,
@@ -142,7 +141,7 @@ class _InfoScreenState extends State<InfoScreen> {
                   hintText: AppStrings.dobText,
                   hintStyle: AppTextStyle.text3,
 
-                  contentPadding: EdgeInsets.symmetric(horizontal: 16.w,vertical: 14.h),
+                  contentPadding: EdgeInsets.symmetric(horizontal: 16,vertical: 14),
                 ),
                 obscureText: false,
               ),
@@ -179,8 +178,8 @@ class _InfoScreenState extends State<InfoScreen> {
                       //ScreenUtil().setWidth(143),
                       cornerRadius: (10),
                       radiusStyle: true,
-                      fontSize: 16.sp,
-                      iconSize: 30.r,
+                      fontSize: 16,
+                      iconSize: 30,
                       customTextStyles: [
                         TextStyle(
                             fontSize: 16,

@@ -1,8 +1,6 @@
 import 'package:buddee_ui/core/constants/font_style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../constants/colors.dart';
 
 class GetTextField extends StatelessWidget {
@@ -16,22 +14,22 @@ class GetTextField extends StatelessWidget {
       TextField(
       decoration: InputDecoration(
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12.r),
+          borderRadius: BorderRadius.circular(12),
           borderSide: BorderSide(color: AppColors.lightgreyTextColor, width: 1),
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12.r),
+          borderRadius: BorderRadius.circular(12),
           borderSide: BorderSide(color: AppColors.lightgreyTextColor, width: 1),
         ),
        focusedBorder: OutlineInputBorder(
-         borderRadius: BorderRadius.circular(12.r),
+         borderRadius: BorderRadius.circular(12),
          borderSide: BorderSide(color: AppColors.lightgreyTextColor, width: 1),
        ),
         filled: true,
         fillColor: AppColors.white,
         hintText: hint,
         hintStyle: AppTextStyle.lightgreytext,
-        contentPadding: EdgeInsets.symmetric(horizontal: 12.w,vertical: 15.h),
+        contentPadding: EdgeInsets.symmetric(horizontal: 12,vertical: 15),
       ),
       obscureText: obscure,
     );

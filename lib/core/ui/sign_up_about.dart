@@ -1,8 +1,8 @@
-import 'package:buddee_ui/core/ui/add_hobbies.dart';
+
+import 'package:buddee_ui/core/ui/select_hobbies.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -41,18 +41,18 @@ class _SignUpAboutState extends State<SignUpAbout> {
   Widget build(BuildContext context) {
     return
       Scaffold(
-        appBar:
-        AppBar(
-          elevation: 0,
-          leading: Padding(
-            padding:  EdgeInsets.only(left: 25.06,),
-            child: IconButton(
-              onPressed: (){Get.back();},icon:Icon(Icons.arrow_back_ios,color: AppColors.backarrow,
-                size: 18.r) ,
-            )
-          ),
-          backgroundColor: AppColors.white,
-        ),
+        // appBar:
+        // AppBar(
+        //   elevation: 0,
+        //   leading: Padding(
+        //     padding:  EdgeInsets.only(left: 25.06,),
+        //     child: IconButton(
+        //       onPressed: (){Get.back();},icon:Icon(Icons.arrow_back_ios,color: AppColors.backarrow,
+        //         size: 18.r) ,
+        //     )
+        //   ),
+        //   backgroundColor: AppColors.white,
+        // ),
         ///Bottom Navigation Bar
     //     bottomNavigationBar: BottomNavigationBar(
     //     backgroundColor: AppColors.white,
@@ -72,31 +72,36 @@ class _SignUpAboutState extends State<SignUpAbout> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: ScreenUtil().setHeight(28),),
+            IconButton(
+              padding:  EdgeInsets.only(left: 10.06,top: 55.07),
+              onPressed: (){Get.back();},
+              icon: SvgPicture.asset(AppIcons.backarrow,color: AppColors.backarrow,height: 15.86,) ,
+            ),
+            SizedBox(height: 28),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: Center(child: Text(AppStrings.tellUsText,style: AppTextStyle.text8,textAlign: TextAlign.center,)),
             ),
-            SizedBox(height: ScreenUtil().setHeight(29),),
+            SizedBox(height: 29),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 32.0),
               child: Text(AppStrings.nameText,style: AppTextStyle.text3 ),
             ),
-            SizedBox(height: ScreenUtil().setHeight(8),),
+            SizedBox(height: 8),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 32.0),
               child:  TextField(
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12.r),
+                    borderRadius: BorderRadius.circular(12),
                     borderSide: BorderSide(color: AppColors.lightgreyTextColor, width: 2),
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12.r),
+                    borderRadius: BorderRadius.circular(12),
                     borderSide: BorderSide(color: AppColors.lightgreyTextColor, width: 2),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12.r),
+                    borderRadius: BorderRadius.circular(12),
                     borderSide: BorderSide(color: AppColors.lightgreyTextColor, width: 1),
                   ),
                   filled: true,
@@ -104,17 +109,17 @@ class _SignUpAboutState extends State<SignUpAbout> {
                   hintText: AppStrings.nameText,
                   hintStyle: AppTextStyle.text3,
 
-                  contentPadding: EdgeInsets.symmetric(horizontal: 16.w,vertical: 14.h),
+                  contentPadding: EdgeInsets.symmetric(horizontal: 16,vertical: 14),
                 ),
                 obscureText: false,
               ),
             ),
-            SizedBox(height: ScreenUtil().setHeight(21),),
+            SizedBox(height:21),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 32.0),
               child: Text(AppStrings.dobText,style:AppTextStyle.text3 ),
             ),
-            SizedBox(height: ScreenUtil().setHeight(8),),
+            SizedBox(height: 8),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 32.0),
               child:
@@ -122,111 +127,114 @@ class _SignUpAboutState extends State<SignUpAbout> {
                 controller: dateinput,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12.r),
+                    borderRadius: BorderRadius.circular(12),
                     borderSide: BorderSide(color: AppColors.lightgreyTextColor, width: 2),
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12.r),
+                    borderRadius: BorderRadius.circular(12),
                     borderSide: BorderSide(color: AppColors.lightgreyTextColor, width: 2),
                   ),
                   focusedBorder:OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12.r),
+                    borderRadius: BorderRadius.circular(12),
                     borderSide: BorderSide(color: AppColors.lightgreyTextColor, width: 1),
                   ),
                   filled: true,
                   fillColor: AppColors.white,
                   hintText: AppStrings.dobText,
                   hintStyle: AppTextStyle.text3,
-                  suffixIcon: Padding(
-                    padding: EdgeInsets.only(right: 135),
-                    child: IconButton(
-                      alignment: Alignment.center,
-                      onPressed: () async {
-                        DateTime? pickedDate = await showDatePicker(
-                            context: context, initialDate: DateTime.now(),
-                            firstDate: DateTime(2000), //DateTime.now() - not to allow to choose before today.
-                            lastDate: DateTime.now()
-                        );
+                  suffixIcon: IconButton(
+                    alignment: Alignment.center,
+                    onPressed: () async {
+                      DateTime? pickedDate = await showDatePicker(
+                          context: context, initialDate: DateTime.now(),
+                          firstDate: DateTime(2000), //DateTime.now() - not to allow to choose before today.
+                          lastDate: DateTime.now()
+                      );
 
-                        if(pickedDate != null ){
-                          print(pickedDate);
-                          ///pickedDate output format => 10-03-2022 00:00:00.000
-                          String formattedDate = DateFormat('dd-MM-yyyy').format(pickedDate);
-                          print(formattedDate);
+                      if(pickedDate != null ){
+                        print(pickedDate);
+                        ///pickedDate output format => 10-03-2022 00:00:00.000
+                        String formattedDate = DateFormat('dd-MM-yyyy').format(pickedDate);
+                        print(formattedDate);
 
 
-                          setState(() {
-                            dateinput.text = formattedDate; //set output date to TextField value.
-                          });
-                        }else{
-                          print("Date is not selected");
-                        }
-                      },
-                      icon:
-                        SvgPicture.asset(AppIcons.calendar,)
-                      // Icon(
-                      //   Icons.calendar_today_outlined,
-                      // //  size: 16,
-                      // ),
-                    ),
+                        setState(() {
+                          dateinput.text = formattedDate; //set output date to TextField value.
+                        });
+                      }else{
+                        print("Date is not selected");
+                      }
+                    },
+                    icon:
+                      SvgPicture.asset(AppIcons.calendar,)
+                    // Icon(
+                    //   Icons.calendar_today_outlined,
+                    // //  size: 16,
+                    // ),
                   ),
-                  contentPadding: EdgeInsets.symmetric(horizontal: 16.w,vertical: 14.h),
+                  contentPadding: EdgeInsets.symmetric(horizontal: 16,vertical: 14),
                 ),
                 obscureText: false,
               ),
             ),
-            SizedBox(height: ScreenUtil().setHeight(21),),
+            SizedBox(height: 21,),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 32.0),
               child: Text(AppStrings.genderText, style: AppTextStyle.text3, ),
             ),
-            SizedBox(height: ScreenUtil().setHeight(8),),
+            SizedBox(height: 8),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 32.0),
               child: Container(
-                height: ScreenUtil().setHeight(60),
-                padding: EdgeInsets.all(4),
-                decoration: BoxDecoration(
-                 borderRadius: BorderRadius.all(
-                    Radius.circular(10.0),
-                    ),
-                    border: Border.all(
-                      color: AppColors.lightgreyTextColor,
-                      width: 2,
-                    )
-                ),
-                width: MediaQuery.of(context).size.width,
-                child:
-                  ToggleSwitch(
-                    minHeight: ScreenUtil().setHeight(50),
-                    minWidth: ScreenUtil().setWidth(143),
-                    cornerRadius: (10),
-                    radiusStyle: true,
-                    fontSize: 16.sp,
-                    iconSize: 30.r,
-                    customTextStyles: [
-                      TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      fontFamily: 'PoppinsR',
-                      color: AppColors.textblueColor
+                  height: 60,
+                  //MediaQuery.of(context).size.height*0.090,
+                  //ScreenUtil().setHeight(60),
+                  padding: EdgeInsets.all(4),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10.0),
+                      ),
+                      border: Border.all(
+                        color: AppColors.lightgreyTextColor,
+                        width: 2,
+                      )
                   ),
-                TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                    fontFamily: 'PoppinsR',
-                    color: AppColors.textblueColor
-                )
-                    ],
-                    activeBgColors: [[AppColors.genderbg1Color],[AppColors.genderbg2Color]],
-                    activeFgColor: AppColors.black,
-                    inactiveBgColor: AppColors.white,
-                    totalSwitches: 2,
+                  width: MediaQuery.of(context).size.width,
+                  child:
+                  Center(
+                    child: ToggleSwitch(
+                      minHeight: MediaQuery.of(context).size.height*0.080,
+                      //ScreenUtil().setHeight(50),
+                      minWidth: MediaQuery.of(context).size.width*0.39,
+                      //ScreenUtil().setWidth(143),
+                      cornerRadius: (10),
+                      radiusStyle: true,
+                      fontSize: 16,
+                      iconSize: 30,
+                      customTextStyles: [
+                        TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                            fontFamily: 'PoppinsR',
+                            color: AppColors.textblueColor
+                        ),
+                        TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                            fontFamily: 'PoppinsR',
+                            color: AppColors.textblueColor
+                        )
+                      ],
+                      activeBgColors: [[AppColors.genderbg1Color],[AppColors.genderbg2Color]],
+                      activeFgColor: AppColors.black,
+                      inactiveBgColor: AppColors.white,
+                      totalSwitches: 2,
 
-                    labels: [AppStrings.maleText,AppStrings.femaleText],
-                    /// todo check svg error
-                    icons: [Icons.male,Icons.female],
-                    onToggle: (index){},
+                      labels: [AppStrings.maleText,AppStrings.femaleText],
+                      /// todo check svg error
+                      icons: [Icons.male,Icons.female],
+                      onToggle: (index){},
+                    ),
                   )
                 // Row(
                 //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -281,13 +289,14 @@ class _SignUpAboutState extends State<SignUpAbout> {
               ),
             ),
             /// Check Height issue,over
-            SizedBox(height: ScreenUtil().setHeight(175)),
+            SizedBox(height: 175),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 32.0),
               child: MaterialButtonBox(title: AppStrings.nextText, onTap: (){
-                Get.to(AddHobbies());
+                Get.to(SelectHobby());
               }),
             ),
+            SizedBox(height: 34,)
           ],
         ),
       ),

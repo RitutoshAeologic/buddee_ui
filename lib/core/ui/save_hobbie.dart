@@ -2,8 +2,9 @@ import 'package:buddee_ui/core/constants/icon_constants.dart';
 import 'package:buddee_ui/core/widget/material_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 import '../constants/colors.dart';
 import '../constants/font_constants.dart';
@@ -22,15 +23,15 @@ class _SaveHobbieState extends State<SaveHobbie> {
   Widget build(BuildContext context) {
     return
       Scaffold(
-      appBar:
-      AppBar(
-        elevation: 0,
-        leading: Padding(
-          padding:  EdgeInsets.only(left: 25.06,),
-          child: Icon(Icons.arrow_back_ios,color: AppColors.backarrow,size: 18.r),
-        ),
-        backgroundColor: AppColors.white,
-      ),
+      //appBar:
+      // AppBar(
+      //   elevation: 0,
+      //   leading: Padding(
+      //     padding:  EdgeInsets.only(left: 25.06,),
+      //     child: Icon(Icons.arrow_back_ios,color: AppColors.backarrow,size: 18.r),
+      //   ),
+      //   backgroundColor: AppColors.white,
+      // ),
       body:
       Padding(
         padding: EdgeInsets.symmetric(horizontal: 20,
@@ -38,19 +39,24 @@ class _SaveHobbieState extends State<SaveHobbie> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: ScreenUtil().setHeight(28),),
+            IconButton(
+              padding:  EdgeInsets.only(left: 10.06,top: 55.07),
+              onPressed: (){Get.back();},
+              icon: SvgPicture.asset(AppIcons.backarrow,color: AppColors.backarrow,height: 15.86,) ,
+            ),
+            SizedBox(height: 28),
             Center(child: Text(AppStrings.addHobbies,style: AppTextStyle.blueboldtext )),
-            SizedBox(height: ScreenUtil().setHeight(29),),
+            SizedBox(height: 29),
             Text(AppStrings.searchText,style: AppTextStyle.lightbluetext ),
-            SizedBox(height: ScreenUtil().setHeight(8),),
+            SizedBox(height: 8),
             TextField(
               decoration: InputDecoration(
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12.r),
+                  borderRadius: BorderRadius.circular(12),
                   borderSide: BorderSide(color: AppColors.textFieldColor, width: 2),
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12.r),
+                  borderRadius: BorderRadius.circular(12),
                   borderSide: BorderSide(color: AppColors.textFieldColor, width: 2),
                 ),
                 filled: true,
@@ -58,16 +64,16 @@ class _SaveHobbieState extends State<SaveHobbie> {
                 hintText: AppStrings.searchTitle,
                 hintStyle: AppTextStyle.lightgreytext,
                 prefixIcon: Icon(Icons.search,color: AppColors.lightgreyTextColor,),
-                contentPadding: EdgeInsets.symmetric(horizontal: 16.w,vertical: 14.h),
+                contentPadding: EdgeInsets.symmetric(horizontal: 16,vertical: 14),
               ),
             ),
-            SizedBox(height: ScreenUtil().setHeight(28),),
+            SizedBox(height: 28),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                        height: ScreenUtil().setHeight(32),
-                        width: ScreenUtil().setWidth(152),
+                        height:32,
+                        width: 152,
                         decoration: BoxDecoration(
                             gradient: LinearGradient(
                               colors: [
@@ -88,35 +94,35 @@ class _SaveHobbieState extends State<SaveHobbie> {
                 IconButton(onPressed: (){}, icon: SvgPicture.asset(AppIcons.delete))
               ],
             ),
-            SizedBox(height: ScreenUtil().setHeight(32),),
+            SizedBox(height: 32),
             Text(AppStrings.lookingText,style: AppTextStyle.lightbluetext,),
-      SizedBox(height: ScreenUtil().setHeight(8),),
+      SizedBox(height: 8),
       Container(
-        height: ScreenUtil().setHeight(114),
-        width: ScreenUtil().setWidth(343),
+        height: 114,
+        width: 343,
         child: TextField(
           maxLines: 10,
           decoration: InputDecoration(
             border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12.r),
+              borderRadius: BorderRadius.circular(12),
               borderSide: BorderSide(color: AppColors.lightgreyTextColor, width: 2),
             ),
             enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12.r),
+              borderRadius: BorderRadius.circular(12),
               borderSide: BorderSide(color: AppColors.lightgreyTextColor, width: 2),
             ),
             filled: true,
             fillColor: AppColors.white,
             hintText: 'Hobbies Description',
             hintStyle: AppTextStyle.text3,
-            contentPadding: EdgeInsets.symmetric(horizontal: 16.w,vertical: 14.h),
+            contentPadding: EdgeInsets.symmetric(horizontal: 16,vertical: 14),
           ),
         ),
       ),
 
-            SizedBox(height: ScreenUtil().setHeight(161),),
-            MaterialButtonBox(title: AppStrings.saveText, onTap: (){})
-
+            SizedBox(height: 161),
+            MaterialButtonBox(title: AppStrings.saveText, onTap: (){}),
+            SizedBox(height: 34,)
           ],
         ),
       ),

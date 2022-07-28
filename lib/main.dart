@@ -9,15 +9,15 @@ import 'package:buddee_ui/core/ui/sign_up_about.dart';
 import 'package:buddee_ui/core/ui/sign_up_screen.dart';
 import 'package:buddee_ui/core/ui/save_hobbie.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
-import 'core/ui/add_hobbies.dart';
+
 import 'core/ui/add_photo.dart';
 import 'core/ui/added_hobby_list.dart';
 import 'core/ui/check_email.dart';
 import 'core/ui/edit_add_photo.dart';
 import 'core/ui/my_profile_list.dart';
+import 'core/ui/profile_hobby.dart';
 
 
 
@@ -29,18 +29,13 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-     return ScreenUtilInit(
-      designSize: Size(360, 690),
-      builder: (_,a){
-        return GetMaterialApp(
+     return GetMaterialApp(
           debugShowCheckedModeBanner: false,
           useInheritedMediaQuery: true,
-          home:// MainMyProfile()
-          //MyProfileList()
-          //ResetPassword()
-          //CheckEmail(),
-         // ForgetPassword()
-           OnBoardScreen(),
+          home: //MainMyProfile()
+          //ProfileHobby()
+
+         OnBoardScreen(),
          // SignInScreen(),
         //SignUpAbout(),
           //AddHobbies(),
@@ -50,7 +45,5 @@ class MyApp extends StatelessWidget {
           // AddedHobbies()
          // EditAddPhoto()
         );
-      },
-    );
-  }
+      }
 }

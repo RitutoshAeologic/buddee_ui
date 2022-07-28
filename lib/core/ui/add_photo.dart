@@ -5,7 +5,6 @@ import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -59,31 +58,35 @@ class _AddPhotoState extends State<AddPhoto> {
   Widget build(BuildContext context) {
     return
       Scaffold(
-      appBar:
-      AppBar(
-        elevation: 0,
-        leading: Padding(
-          padding:  EdgeInsets.only(left: 25.06,),
-          child: IconButton(
-            onPressed: (){Get.back();},icon:Icon(Icons.arrow_back_ios,color: AppColors.backarrow,size: 18.r) ,
-          )
-        ),
-        backgroundColor: AppColors.white,
-      ),
+      // appBar:
+      // AppBar(
+      //   elevation: 0,
+      //   leading: Padding(
+      //     padding:  EdgeInsets.only(left: 25.06,),
+      //     child: IconButton(
+      //       onPressed: (){Get.back();},icon:Icon(Icons.arrow_back_ios,color: AppColors.backarrow,size: 18.r) ,
+      //     )
+      //   ),
+      //   backgroundColor: AppColors.white,
+      // ),
       body:
-      Padding(
-        padding: EdgeInsets.symmetric(horizontal: 32.0,
-        ),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: ScreenUtil().setHeight(28.07),),
-              Center(child: Text(AppStrings.addphotosText,style: AppTextStyle.blueboldtext )),
-              SizedBox(height: ScreenUtil().setHeight(42),),
+      SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            IconButton(
+              padding:  EdgeInsets.only(left: 10.06,top: 55.07),
+              onPressed: (){Get.back();},
+              icon: SvgPicture.asset(AppIcons.backarrow,color: AppColors.backarrow,height: 15.86,) ,
+            ),
+            SizedBox(height: 28.07),
+            Center(child: Text(AppStrings.addphotosText,style: AppTextStyle.blueboldtext )),
+            SizedBox(height: 42),
 
 
-              GridView.builder(
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: GridView.builder(
                   itemCount: 6,
                   shrinkWrap: true,
                   //temp.length,
@@ -99,7 +102,7 @@ class _AddPhotoState extends State<AddPhoto> {
                         onTap: (){
                           Get.bottomSheet(
                               Container(
-                            height: ScreenUtil().setHeight(150),
+                            height: 150,
                             color: AppColors.photobgColor,
                             child: Column(
                              // mainAxisAlignment: MainAxisAlignment.center,
@@ -157,39 +160,22 @@ class _AddPhotoState extends State<AddPhoto> {
                       );
                   }
               ),
+            ),
 
-              SizedBox(height: ScreenUtil().setHeight(174),),
+            SizedBox(height:174,),
 
 
-              // Container(
-              //   height: ScreenUtil().setHeight(114),
-              //   width: ScreenUtil().setWidth(343),
-              //   child: TextField(
-              //     maxLines: 10,
-              //     decoration: InputDecoration(
-              //       border: OutlineInputBorder(
-              //         borderRadius: BorderRadius.circular(12.r),
-              //         borderSide: BorderSide(color: AppColors.lightgreyTextColor, width: 2),
-              //       ),
-              //       enabledBorder: OutlineInputBorder(
-              //         borderRadius: BorderRadius.circular(12.r),
-              //         borderSide: BorderSide(color: AppColors.lightgreyTextColor, width: 2),
-              //       ),
-              //       filled: true,
-              //       fillColor: AppColors.white,
-              //       hintText: 'Hobbies Description',
-              //       hintStyle: AppTextStyle.text3,
-              //       contentPadding: EdgeInsets.symmetric(horizontal: 16.w,vertical: 14.h),
-              //     ),
-              //   ),
-              // ),
 
-              MaterialButtonBox(title: AppStrings.saveText, onTap: (){
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 32.0),
+              child: MaterialButtonBox(title: AppStrings.saveText, onTap: (){
                 Get.to(EditAddPhoto());
-              })
+              }),
+            ),
+            SizedBox(height: 34,)
 
-            ],
-          ),
+          ],
         ),
       ),
       backgroundColor: AppColors.white,

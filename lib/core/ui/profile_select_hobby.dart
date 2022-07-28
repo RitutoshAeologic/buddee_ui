@@ -1,7 +1,6 @@
 import 'package:buddee_ui/core/ui/profile_edit_hobby.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -77,15 +76,15 @@ class _ProfileSelectHobbyState extends State<ProfileSelectHobby> {
             child: TextField(
               decoration: InputDecoration(
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12.r),
+                  borderRadius: BorderRadius.circular(12),
                   borderSide: BorderSide(color: AppColors.textFieldColor, width: 2),
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12.r),
+                  borderRadius: BorderRadius.circular(12),
                   borderSide: BorderSide(color: AppColors.textFieldColor, width: 2),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12.r),
+                  borderRadius: BorderRadius.circular(12),
                   borderSide: BorderSide(color: AppColors.textFieldColor, width: 2),
                 ),
                 filled: true,
@@ -93,7 +92,7 @@ class _ProfileSelectHobbyState extends State<ProfileSelectHobby> {
                 hintText: AppStrings.searchTitle,
                 hintStyle: AppTextStyle.lightgreytext,
                 prefixIcon: Icon(Icons.search,color: AppColors.lightgreyTextColor,),
-                contentPadding: EdgeInsets.symmetric(horizontal: 16.w,vertical: 14.h),
+                contentPadding: EdgeInsets.symmetric(horizontal: 16,vertical: 14),
               ),
             ),
           ),

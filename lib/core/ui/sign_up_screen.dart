@@ -2,7 +2,6 @@ import 'package:buddee_ui/core/ui/sign_in_screen.dart';
 import 'package:buddee_ui/core/ui/sign_up_about.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -28,97 +27,130 @@ class _SignUpState extends State<SignUp> {
   Widget build(BuildContext context) {
     return  Scaffold(
       backgroundColor: Colors.white,
-      appBar:
-      AppBar(
-        elevation: 0,
-        leading: Padding(
-          padding:  EdgeInsets.only(left: 25.06,),
-          child:
-          IconButton(
-            onPressed: (){Get.back();},icon:Icon(Icons.arrow_back_ios,color: AppColors.backarrow,size: 18.r) ,
-          )
-        ),
-        backgroundColor: AppColors.white,
-      ),
+      // appBar:
+      // AppBar(
+      //   elevation: 0,
+      //   leading:
+      //   Padding(
+      //     padding:  EdgeInsets.only(left: 17.06,),
+      //     child:
+      //     IconButton(
+      //       onPressed: (){Get.back();},
+      //       icon: SvgPicture.asset(AppIcons.backarrow,color: AppColors.backarrow,height: 15.86,) ,
+      //     )
+      //   ),
+      //   backgroundColor: AppColors.white,
+      // ),
       body: SingleChildScrollView(
           child:
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 32,),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                // Row(
-                //   crossAxisAlignment: CrossAxisAlignment.start,
-                //   mainAxisAlignment: MainAxisAlignment.start,
-                //   children: [
-                //     IconButton(onPressed: (){}, icon: Icon(Icons.arrow_back_ios,color: AppColors.black,)),
-                //   ],
-                // ),
-                SizedBox(height: ScreenUtil().setHeight(24),),
-                Center(
-                  child: Text(AppStrings.helloText,style: AppTextStyle.helloAgaintext ),
-                ),
-                SizedBox(height: ScreenUtil().setHeight(8),),
-                Center(
-                  child: Text(
-                      AppStrings.createYourAccountText,style:AppTextStyle.signInAccount ),
-                ),
-                SizedBox(height: ScreenUtil().setHeight(39),),
-                Text(AppStrings.emailAddressText,style: AppTextStyle.text3 ),
-                SizedBox(height: ScreenUtil().setHeight(8),),
-                GrayGetTextField(hint: AppStrings.demoEmailText, obscure: false,),
-                SizedBox(height: ScreenUtil().setHeight(21),),
-                Text(AppStrings.passwordText,style:AppTextStyle.text3 ),
-                SizedBox(height: ScreenUtil().setHeight(8),),
-                GrayGetTextField(hint: AppStrings.enterPasswordText , obscure: true,),
-                SizedBox(height: ScreenUtil().setHeight(21),),
-                Text(AppStrings.confirmpasswordText,style:AppTextStyle.text3 ),
-                SizedBox(height: ScreenUtil().setHeight(8),),
-                GrayGetTextField(hint: AppStrings.confirmpasswordText , obscure: true,),
-                SizedBox(height: ScreenUtil().setHeight(24)),
-                MaterialButtonBox(title: AppStrings.signUpText, onTap: (){
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              IconButton(
+                padding:  EdgeInsets.only(left: 10.06,top: 55.07),
+                onPressed: (){Get.back();},
+                icon: SvgPicture.asset(AppIcons.backarrow,color: AppColors.backarrow,height: 15.86,) ,
+              ),
+              SizedBox(height: 34),
+              Center(
+                child: Text(AppStrings.helloText,style: AppTextStyle.helloAgaintext ),
+              ),
+              SizedBox(height: 8),
+              Center(
+                child: Text(
+                    AppStrings.createYourAccountText,style:AppTextStyle.signInAccount ),
+              ),
+              SizedBox(height:39),
+              Padding(
+                padding: const EdgeInsets.only(left: 32.0),
+                child: Text(AppStrings.emailAddressText,style: AppTextStyle.text3 ),
+              ),
+              SizedBox(height: 8),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 32.0),
+                child: GrayGetTextField(hint: AppStrings.demoEmailText, obscure: false,),
+              ),
+              SizedBox(height: 21),
+              Padding(
+                padding: const EdgeInsets.only(left: 32.0),
+                child: Text(AppStrings.passwordText,style:AppTextStyle.text3 ),
+              ),
+              SizedBox(height:8),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 32.0),
+                child: GrayGetTextField(hint: AppStrings.enterPasswordText , obscure: true,),
+              ),
+              SizedBox(height: 21),
+              Padding(
+                padding: const EdgeInsets.only(left: 32.0),
+                child: Text(AppStrings.confirmpasswordText,style:AppTextStyle.text3 ),
+              ),
+              SizedBox(height: 8),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 32.0),
+                child: GrayGetTextField(hint: AppStrings.confirmpasswordText , obscure: true,),
+              ),
+              SizedBox(height: 24),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 32.0),
+                child: MaterialButtonBox(title: AppStrings.signUpText, onTap: (){
                   Get.to(SignUpAbout());
                 }),
-                SizedBox(height: ScreenUtil().setHeight(24),),
-                //  Divider(thickness:2,color: Colors.grey,),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              ),
+              SizedBox(height:24),
+              //  Divider(thickness:2,color: Colors.grey,),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 32.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     SvgPicture.asset(AppIcons.dot,
-                      width: ScreenUtil().setWidth(122),
+                      width: 120,
                     ),
                     Text(AppStrings.orWithText, style: AppTextStyle.text5),
                     SvgPicture.asset(AppIcons.dot,
-                      width: ScreenUtil().setWidth(122),
+                      width: 120,
                     ),
                   ],
                 ),
-                SizedBox(height: ScreenUtil().setHeight(24),),
-                TextButtonBox(title: AppStrings.googleSignInText, onTap: (){}, icon: AppIcons.googlepng),
-                SizedBox(height: ScreenUtil().setHeight(16),),
-                TextButtonBox(title: AppStrings.facebookSignInText, onTap: (){}, icon: AppIcons.fbpng),
-                SizedBox(height: ScreenUtil().setHeight(32),),
-                Row(
-                  children: <Widget>[
-                    Text(AppStrings.doHaveAccountText,
-                        style:
-                        AppTextStyle.dohaveaccount
-                    ),
-                    TextButton(
-                      child:  Text(
-                      AppStrings.lcsignInText,
-                          style: AppTextStyle.text7
+              ),
+              SizedBox(height: 24),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 32.0),
+                child: TextButtonBox(title: AppStrings.googleSignInText, onTap: (){}, icon: AppIcons.googlepng),
+              ),
+              SizedBox(height: 16),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 32.0),
+                child: TextButtonBox(title: AppStrings.facebookSignInText, onTap: (){}, icon: AppIcons.fbpng),
+              ),
+              SizedBox(height: 32),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 32.0),
+                child: Center(
+                  child: Row(
+                    children: <Widget>[
+                      Text(AppStrings.doHaveAccountText,
+                          style:
+                          AppTextStyle.dohaveaccount
                       ),
-                      onPressed: () {
-                        Get.to(() => SignInScreen(),);
-                        //signup screen
-                      },
-                    )
-                  ],
-                  mainAxisAlignment: MainAxisAlignment.center,
+                      TextButton(
+                        child:  Text(
+                        AppStrings.lcsignInText,
+                            style: AppTextStyle.text7
+                        ),
+                        onPressed: () {
+                          Get.to(() => SignInScreen(),);
+                          //signup screen
+                        },
+                      )
+                    ],
+                    mainAxisAlignment: MainAxisAlignment.start,
+                  ),
                 ),
-              ],
-            ),
+              ),
+              SizedBox(height: 40,),
+            ],
           )
       ),
     );
