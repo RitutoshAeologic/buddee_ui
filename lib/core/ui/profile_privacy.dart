@@ -25,31 +25,35 @@ class _ProfilePrivacyState extends State<ProfilePrivacy> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: ScreenUtil().setHeight(43),),
             Padding(
-              padding: const EdgeInsets.only(left: 18.0),
+              padding: const EdgeInsets.only(top: 35,bottom: 17,),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   //  SizedBox(width:ScreenUtil().setWidth(18.06) ,),
-                  InkWell(
-                    onTap: (){Get.back();},
-                    child: SvgPicture.asset(AppIcons.backarrow,
-                      height: ScreenUtil().setHeight(15.86),
-                      width: ScreenUtil().setWidth(8.89),
+                  IconButton(
+                    onPressed: (){Get.back();},
+                    icon: SvgPicture.asset(AppIcons.backarrow,
+                      height: 15.86,
+                      //ScreenUtil().setHeight(15.86),
+                      width: 8.89,
+                      //ScreenUtil().setWidth(8.89),
                       color: AppColors.backarrowsvg,
                     ),
                   ),
-                  SizedBox(width:ScreenUtil().setWidth(30.06) ,),
-                  Text(AppStrings.privacyPolicyText,style: AppTextStyle.text13,),
+                  //SizedBox(width:ScreenUtil().setWidth(30.06) ,),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: Text(AppStrings.privacyPolicyText,style: AppTextStyle.text13,),
+                  ),
                 ],
               ),
             ),
-            SizedBox(height: ScreenUtil().setHeight(33),),
+            SizedBox(height: 33),
 
            Container(
              margin: EdgeInsets.only(left: 18,right: 16),
-             width: ScreenUtil().setWidth(341),
+             width: MediaQuery.of(context).size.width,
              child: Text('Effective: October 1, 2021 \n\n(View previous versions: 4/19/21, 6/12/20)\n\n'
                 'Our Privacy Policy explains how Buddlee collects, uses, and discloses information about you. '
                  'The terms “Buddlee,” “we,” “us,” and “our” include Buddlee LLC and our affiliates. '

@@ -203,4 +203,29 @@ class AppTextStyle {
     decoration: TextDecoration.underline
   );
 
+  static TextStyle text14 =   TextStyle(
+    fontWeight: FontWeight.w500,
+    fontSize: 21.sp,
+    color: AppColors.textblueColor,
+    fontFamily: 'PoppinsR',
+  );
+    static TextStyle userNameText =   TextStyle(
+    fontWeight: FontWeight.w500,
+    fontSize: 20.sp,
+    color: AppColors.white,
+    fontFamily: 'Poppins',
+  );
+
+  static TextStyle text15 =   TextStyle(
+    fontWeight: FontWeight.w400,
+    fontSize: 14.sp,
+    color: AppColors.backarrowsvg,
+    fontFamily: 'Poppins',
+  );
+  static TextStyle text16 =   TextStyle(
+    fontWeight: FontWeight.w400,
+    fontSize: 14.sp,
+    color: AppColors.white,
+    fontFamily: 'Poppins',
+  );
 }

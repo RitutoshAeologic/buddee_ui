@@ -18,7 +18,7 @@ class MaterialButtonBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return
       Container(
-        height: ScreenUtil().setHeight(54),
+        height: ScreenUtil().setHeight(58),
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [

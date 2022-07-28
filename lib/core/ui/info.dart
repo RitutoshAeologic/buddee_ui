@@ -56,37 +56,40 @@ class _InfoScreenState extends State<InfoScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: ScreenUtil().setHeight(43),),
+
             Padding(
-              padding: const EdgeInsets.only(left: 18.0),
+              padding:  EdgeInsets.only(left: 10.0,top: 35),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   //  SizedBox(width:ScreenUtil().setWidth(18.06) ,),
-                   InkWell(
-                     onTap: (){Get.back();},
-                     child: SvgPicture.asset(AppIcons.backarrow,
-                        height: ScreenUtil().setHeight(15.86),
-                        width: ScreenUtil().setWidth(8.89),
+                   IconButton(
+                     onPressed: (){Get.back();},
+                     icon: SvgPicture.asset(AppIcons.backarrow,
+                        height: 15.86,
+                        width: 8.89,
+
                         color: AppColors.backarrowsvg,
                       ),
                    ),
-                  SizedBox(width:ScreenUtil().setWidth(30.06) ,),
-                  Text(AppStrings.myprofileText,style: AppTextStyle.text13,),
+                //  SizedBox(width:ScreenUtil().setWidth(30.06) ,),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 2.0),
+                    child: Text(AppStrings.myprofileText,style: AppTextStyle.text13,),
+                  ),
                 ],
               ),
             ),
-            SizedBox(height: ScreenUtil().setHeight(26),),
+
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              padding: const EdgeInsets.only(left: 25.0,right: 25.0,top: 26),
               child: Center(child: Text(AppStrings.infoText,style: AppTextStyle.text8,textAlign: TextAlign.center,)),
             ),
-            SizedBox(height: ScreenUtil().setHeight(29),),
+
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 32.0),
+              padding: const EdgeInsets.only(left: 32.0,right: 32.0,top: 29,bottom: 8),
               child: Text(AppStrings.nameText,style: AppTextStyle.text3 ),
             ),
-            SizedBox(height: ScreenUtil().setHeight(8),),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 32.0),
               child:  TextField(
@@ -113,12 +116,10 @@ class _InfoScreenState extends State<InfoScreen> {
                 obscureText: false,
               ),
             ),
-            SizedBox(height: ScreenUtil().setHeight(21),),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 32.0),
+              padding: const EdgeInsets.only(left: 32.0,right: 32.0,top: 21,bottom: 8),
               child: Text(AppStrings.dobText,style:AppTextStyle.text3 ),
             ),
-            SizedBox(height: ScreenUtil().setHeight(8),),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 32.0),
               child:
@@ -146,16 +147,18 @@ class _InfoScreenState extends State<InfoScreen> {
                 obscureText: false,
               ),
             ),
-            SizedBox(height: ScreenUtil().setHeight(21),),
+
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 32.0),
+              padding: const EdgeInsets.only(left: 32.0,right: 32,top: 21,bottom: 8),
               child: Text(AppStrings.genderText, style: AppTextStyle.text3, ),
             ),
-            SizedBox(height: ScreenUtil().setHeight(8),),
+
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 32.0),
               child: Container(
-                  height: ScreenUtil().setHeight(60),
+                  height: 60,
+                  //MediaQuery.of(context).size.height*0.090,
+                  //ScreenUtil().setHeight(60),
                   padding: EdgeInsets.all(4),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(
@@ -168,36 +171,40 @@ class _InfoScreenState extends State<InfoScreen> {
                   ),
                   width: MediaQuery.of(context).size.width,
                   child:
-                  ToggleSwitch(
-                    minHeight: ScreenUtil().setHeight(50),
-                    minWidth: ScreenUtil().setWidth(143),
-                    cornerRadius: (10),
-                    radiusStyle: true,
-                    fontSize: 16.sp,
-                    iconSize: 30.r,
-                    customTextStyles: [
-                      TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                          fontFamily: 'PoppinsR',
-                          color: AppColors.textblueColor
-                      ),
-                      TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                          fontFamily: 'PoppinsR',
-                          color: AppColors.textblueColor
-                      )
-                    ],
-                    activeBgColors: [[AppColors.genderbg1Color],[AppColors.genderbg2Color]],
-                    activeFgColor: AppColors.black,
-                    inactiveBgColor: AppColors.white,
-                    totalSwitches: 2,
+                  Center(
+                    child: ToggleSwitch(
+                     minHeight: MediaQuery.of(context).size.height*0.080,
+                      //ScreenUtil().setHeight(50),
+                      minWidth: MediaQuery.of(context).size.width*0.39,
+                      //ScreenUtil().setWidth(143),
+                      cornerRadius: (10),
+                      radiusStyle: true,
+                      fontSize: 16.sp,
+                      iconSize: 30.r,
+                      customTextStyles: [
+                        TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                            fontFamily: 'PoppinsR',
+                            color: AppColors.textblueColor
+                        ),
+                        TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                            fontFamily: 'PoppinsR',
+                            color: AppColors.textblueColor
+                        )
+                      ],
+                      activeBgColors: [[AppColors.genderbg1Color],[AppColors.genderbg2Color]],
+                      activeFgColor: AppColors.black,
+                      inactiveBgColor: AppColors.white,
+                      totalSwitches: 2,
 
-                    labels: [AppStrings.maleText,AppStrings.femaleText],
-                    /// todo check svg error
-                    icons: [Icons.male,Icons.female],
-                    onToggle: (index){},
+                      labels: [AppStrings.maleText,AppStrings.femaleText],
+                      /// todo check svg error
+                      icons: [Icons.male,Icons.female],
+                      onToggle: (index){},
+                    ),
                   )
                 // Row(
                 //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -252,9 +259,9 @@ class _InfoScreenState extends State<InfoScreen> {
               ),
             ),
             /// Check Height issue,over
-            SizedBox(height: ScreenUtil().setHeight(175)),
+            //SizedBox(height: ScreenUtil().setHeight(175)),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 32.0),
+              padding: const EdgeInsets.only(left: 32.0,right: 32.0,top: 175,bottom: 36),
               child: MaterialButtonBox(title: AppStrings.saveText, onTap: (){
               }),
             ),

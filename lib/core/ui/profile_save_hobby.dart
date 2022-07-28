@@ -1,4 +1,5 @@
-import 'package:buddee_ui/core/ui/profile_select_hobby.dart';
+import 'package:buddee_ui/core/ui/profile_hobby.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,7 +11,6 @@ import '../constants/colors.dart';
 import '../constants/font_constants.dart';
 import '../constants/font_style.dart';
 import '../constants/icon_constants.dart';
-import '../widget/material_button.dart';
 import '../widget/plain_material_button.dart';
 
 class ProfileSaveHobbyList extends StatefulWidget {
@@ -28,35 +28,38 @@ class _ProfileSaveHobbyListState extends State<ProfileSaveHobbyList> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: ScreenUtil().setHeight(43),),
             Padding(
-              padding: const EdgeInsets.only(left: 18.0),
+              padding: const EdgeInsets.only(top: 35,bottom: 18,),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   //  SizedBox(width:ScreenUtil().setWidth(18.06) ,),
-                  InkWell(
-                    onTap: (){Get.back();},
-                    child: SvgPicture.asset(AppIcons.backarrow,
-                      height: ScreenUtil().setHeight(15.86),
-                      width: ScreenUtil().setWidth(8.89),
+                  IconButton(
+                    onPressed: (){Get.back();},
+                    icon: SvgPicture.asset(AppIcons.backarrow,
+                      height: 15.86,
+                      //ScreenUtil().setHeight(15.86),
+                      width: 8.89,
+                      //ScreenUtil().setWidth(8.89),
                       color: AppColors.backarrowsvg,
                     ),
                   ),
-                  SizedBox(width:ScreenUtil().setWidth(30.06) ,),
-                  Text(AppStrings.myprofileText,style: AppTextStyle.text13,),
+                  //SizedBox(width:ScreenUtil().setWidth(30.06) ,),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: Text(AppStrings.myprofileText,style: AppTextStyle.text13,),
+                  ),
                 ],
               ),
             ),
-            SizedBox(height: ScreenUtil().setHeight(26),),
+
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: Center(child: Text(AppStrings.myHobbies,style: AppTextStyle.text8,textAlign: TextAlign.center,)),
             ),
-            SizedBox(height: ScreenUtil().setHeight(35),),
-            //SizedBox(height: ScreenUtil().setHeight(36),),
+            const SizedBox(height: 35),
             Center(child: Text('You have three hobbies',style: AppTextStyle.text9,)),
-            SizedBox(height: ScreenUtil().setHeight(25),),
+            const SizedBox (height: 25),
             ListView.builder(
               physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
@@ -72,8 +75,8 @@ class _ProfileSaveHobbyListState extends State<ProfileSaveHobbyList> {
                         children: [
                           Container(
                             padding: EdgeInsets.symmetric(vertical: 4.0,horizontal: 9.0),
-                            height: ScreenUtil().setHeight(32),
-                            width: ScreenUtil().setWidth(152),
+                            height: 32,
+                            width: 152,
                             decoration: BoxDecoration(
                               gradient: LinearGradient(
                                 colors: [
@@ -88,7 +91,9 @@ class _ProfileSaveHobbyListState extends State<ProfileSaveHobbyList> {
                             ),
                             child:Row(
                               children: [
-                                Text('Badminton', style: AppTextStyle.text10,),
+                                Expanded(child: Text('Badminton',
+                                  overflow: TextOverflow.ellipsis,
+                                  style: AppTextStyle.text10,)),
                               ],
                             ),
                           ),
@@ -97,38 +102,38 @@ class _ProfileSaveHobbyListState extends State<ProfileSaveHobbyList> {
                             padding: const EdgeInsets.only(right: 2.0),
                             child: Row(children: [
                               InkWell(onTap: (){}, child: SvgPicture.asset(AppIcons.edit,
-                                height: ScreenUtil().setHeight(19),)),
-                              SizedBox(width: ScreenUtil().setWidth(29),),
+                                height: 19)),
+                              SizedBox(width: 29),
                               InkWell(onTap: (){}, child: SvgPicture.asset(AppIcons.delete,
-                                height: ScreenUtil().setHeight(19),)),
+                                height: 19)),
                             ],),
                           )
                         ],
                       ),
                     ),
 
-                    SizedBox(height: ScreenUtil().setHeight(16),),
+                    SizedBox(height:16),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 16 ),
                       child: Container(
-                        height: ScreenUtil().setHeight(75),
+                        height: 75,
                         child: Text('Intermediate level, looking for a partner to play weekdays after work. Committed but not too serious',
                           style: AppTextStyle.text6,),
                       ),
                     ),
-                    SizedBox(height: ScreenUtil().setHeight(40),),
+                    SizedBox(height: 40),
                   ],
                 );
               },
             ),
-            SizedBox(height: ScreenUtil().setHeight(83),),
+            SizedBox(height:96),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 32),
               child: PlainMaterialButtonBox(title: AppStrings.saveText, onTap: (){
-                //Get.to();
+                Get.to(()=> ProfileHobby());
               }),
             ),
-            SizedBox(height: ScreenUtil().setHeight(15),),
+            SizedBox(height: 36),
 
 
           ],

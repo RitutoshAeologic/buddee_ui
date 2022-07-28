@@ -29,36 +29,40 @@ class _ProfileSearchState extends State<ProfileSearch> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: ScreenUtil().setHeight(43),),
             Padding(
-              padding: const EdgeInsets.only(left: 18.0),
+              padding: const EdgeInsets.only(top: 35,bottom: 17,),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  //  SizedBox(width:ScreenUtil().setWidth(18.06) ,),
-                  InkWell(
-                    onTap: (){Get.back();},
-                    child: SvgPicture.asset(AppIcons.backarrow,
-                      height: ScreenUtil().setHeight(15.86),
-                      width: ScreenUtil().setWidth(8.89),
+
+                  IconButton(
+                    onPressed: (){Get.back();},
+                    icon: SvgPicture.asset(AppIcons.backarrow,
+                      height: 15.86,
+                      //ScreenUtil().setHeight(15.86),
+                      width: 8.89,
+                      //ScreenUtil().setWidth(8.89),
                       color: AppColors.backarrowsvg,
                     ),
                   ),
-                  SizedBox(width:ScreenUtil().setWidth(30.06) ,),
-                  Text(AppStrings.myprofileText,style: AppTextStyle.text13,),
+                  //SizedBox(width:ScreenUtil().setWidth(30.06) ,),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: Text(AppStrings.myprofileText,style: AppTextStyle.text13,),
+                  ),
                 ],
               ),
             ),
-            SizedBox(height: ScreenUtil().setHeight(26),),
+           // SizedBox(height: ScreenUtil().setHeight(26),),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: Center(child: Text(AppStrings.searchSettingsText,style: AppTextStyle.text8,textAlign: TextAlign.center,)),
             ),
-            SizedBox(height: ScreenUtil().setHeight(21.58),),
+            SizedBox(height: 21.58),
             Container(
               margin: EdgeInsets.symmetric(horizontal: 25),
-              height: ScreenUtil().setHeight(116),
-              width: ScreenUtil().setWidth(325),
+              height: 116,
+              width: MediaQuery.of(context).size.width,
               padding: EdgeInsets.symmetric(horizontal: 8,vertical: 16),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
@@ -72,7 +76,7 @@ class _ProfileSearchState extends State<ProfileSearch> {
                     child: Text(AppStrings.genderText,style:AppTextStyle.text9
                     ),
                   ),
-                  SizedBox(height: ScreenUtil().setHeight(16),),
+                  SizedBox(height:16),
                   Expanded(
                     child: ToggleSwitch(
                       initialLabelIndex: 0,
@@ -116,11 +120,11 @@ class _ProfileSearchState extends State<ProfileSearch> {
                 ],
               ),
             ),
-            SizedBox(height: ScreenUtil().setHeight(24),),
+            SizedBox(height: 24),
             Container(
               margin: EdgeInsets.symmetric(horizontal: 25),
-              height: ScreenUtil().setHeight(174),
-              width: ScreenUtil().setWidth(325),
+              height: 174,
+              width: MediaQuery.of(context).size.width,
               padding: EdgeInsets.symmetric(horizontal: 8,vertical: 16),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
@@ -153,10 +157,10 @@ class _ProfileSearchState extends State<ProfileSearch> {
                       children: [
                         Row(children: [
                           Text('Max',style: AppTextStyle.text6,),
-                          SizedBox(width: ScreenUtil().setWidth(8),),
+                          SizedBox(width: 8,),
                           Container(
-                            height: ScreenUtil().setHeight(48),
-                            width: ScreenUtil().setWidth(94),
+                            height: 48,
+                            width: 94,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(12),
                                 border: Border.all(width: 1,color: AppColors.lightgreyTextColor),
@@ -193,11 +197,11 @@ class _ProfileSearchState extends State<ProfileSearch> {
               ),
             ),
 
-            SizedBox(height: ScreenUtil().setHeight(24),),
+            SizedBox(height: 24),
             Container(
               margin: EdgeInsets.symmetric(horizontal: 25),
-              height: ScreenUtil().setHeight(174),
-              width: ScreenUtil().setWidth(325),
+              height: 174,
+              width: MediaQuery.of(context).size.width,
               padding: EdgeInsets.symmetric(horizontal: 8,vertical: 16),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
@@ -234,10 +238,10 @@ class _ProfileSearchState extends State<ProfileSearch> {
                           Row(
                             children: [
                               Text('From',style: AppTextStyle.text6,),
-                              SizedBox(width: ScreenUtil().setWidth(8),),
+                              SizedBox(width:8),
                               Container(
-                                height: ScreenUtil().setHeight(48),
-                                width: ScreenUtil().setWidth(94),
+                                height: 48,
+                                width: 94,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(12),
                                   border: Border.all(width: 1,color: AppColors.lightgreyTextColor),
@@ -251,10 +255,10 @@ class _ProfileSearchState extends State<ProfileSearch> {
                           Row(
                             children: [
                               Text('To',style: AppTextStyle.text6,),
-                              SizedBox(width: ScreenUtil().setWidth(8),),
+                              SizedBox(width: 8),
                               Container(
-                                height: ScreenUtil().setHeight(48),
-                                width: ScreenUtil().setWidth(94),
+                                height: 48,
+                                width: 94,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(12),
                                   border: Border.all(width: 1,color: AppColors.lightgreyTextColor),
@@ -292,11 +296,12 @@ class _ProfileSearchState extends State<ProfileSearch> {
                 ],
               ),
             ),
-            SizedBox(height: ScreenUtil().setHeight(24),),
+            SizedBox(height: 24),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 32.0),
               child: MaterialButtonBox(title: AppStrings.applyText, onTap: (){}),
-            )
+            ),
+            SizedBox(height: 36),
           ],
         ),
       ),

@@ -126,7 +126,8 @@ class _AddPhotoState extends State<AddPhoto> {
                           isDismissible: true
                           );
                         },
-                        child: Stack(
+                        child:
+                        Stack(
                           children: [
                             Container(
 

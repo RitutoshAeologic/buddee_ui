@@ -57,13 +57,15 @@ class AppStrings {
   static const String myprofileText                     = 'My Profile';
   static const String infoText                          = 'Information';
   static const String hobbiesText                       = 'Hobbies';
+  static const String galleryText                       = 'Gallery';
+  static const String cameraText                       = 'Camera';
   static const String settingsText                      = 'Search Settings';
   static const String privacyPolicyText                 = 'Privacy Policy';
-  static const String logoutText                       = 'LOG OUT';
-  static const String bothText                       = 'Both';
-  static const String distanceText                         = 'Distance';
-  static const String ageText                         = 'Age';
-  static const String discussText                         = 'Let’s discuss';
-  static const String addDescripText                         = 'Add description';
+  static const String logoutText                        = 'LOG OUT';
+  static const String bothText                          = 'Both';
+  static const String distanceText                      = 'Distance';
+  static const String ageText                           = 'Age';
+  static const String discussText                       = 'Let’s discuss';
+  static const String addDescripText                    = 'Add description';
 }
 

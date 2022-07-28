@@ -1,6 +1,7 @@
 
 
 import 'package:buddee_ui/core/ui/info.dart';
+import 'package:buddee_ui/core/ui/my_profile_main.dart';
 import 'package:buddee_ui/core/ui/profile_hobby.dart';
 import 'package:buddee_ui/core/ui/profile_privacy.dart';
 import 'package:buddee_ui/core/ui/profile_search.dart';
@@ -17,23 +18,29 @@ import '../constants/font_constants.dart';
 import '../constants/font_style.dart';
 import '../constants/icon_constants.dart';
 
-class MainProfile extends StatefulWidget {
-  const MainProfile({Key? key}) : super(key: key);
+class MyProfileList extends StatefulWidget {
+  const MyProfileList({Key? key}) : super(key: key);
 
   @override
-  State<MainProfile> createState() => _MainProfileState();
+  State<MyProfileList> createState() => _MyProfileListState();
 }
 
-class _MainProfileState extends State<MainProfile> {
+class _MyProfileListState extends State<MyProfileList> {
+  var orientation, size,height,width;
   @override
   Widget build(BuildContext context) {
+    orientation = MediaQuery.of(context).orientation;
+    size = MediaQuery.of(context).size;
+    height = size.height;
+    width = size.width;
     return Scaffold(
       backgroundColor: AppColors.white,
       body: SingleChildScrollView(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              height: ScreenUtil().setHeight(614),
+              height: height*0.784,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                   image: DecorationImage(
@@ -43,30 +50,51 @@ class _MainProfileState extends State<MainProfile> {
               ),
               child:
               Padding(
-                padding: const EdgeInsets.only(left: 18.0,top: 51,right: 10),
+                padding: const EdgeInsets.only(top: 35,right: 10),
                 child: Column(
                   children: [
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                       //  SizedBox(width:ScreenUtil().setWidth(18.06) ,),
-                         InkWell(
-                           child: SvgPicture.asset(AppIcons.backarrow,
-                            height: ScreenUtil().setHeight(15.86),
-                            width: ScreenUtil().setWidth(8.89),
-                            color: AppColors.backarrowsvg,
-                            ),
-                         ),
-                        SizedBox(width:ScreenUtil().setWidth(30.06) ,),
+                         Row(
+
+                           children: [
+                             IconButton(
+                               onPressed: (){Get.to(()=>MainMyProfile());},
+                               icon: SvgPicture.asset(AppIcons.backarrow,
+                               height: 15.86,
+                               //ScreenUtil().setHeight(15.86),
+                                //width: ScreenUtil().setWidth(8.89),
+                                color: AppColors.backarrowsvg,
+                                ),
+                             ),
+                        SizedBox(width:
+                        //ScreenUtil().setWidth(30.06) ,
+                        10
+                        ),
                         Text(AppStrings.myprofileText,style: AppTextStyle.text13,),
-                        SizedBox(width:ScreenUtil().setWidth(172) ,),
-                        InkWell(child: SvgPicture.asset(AppIcons.close)),
+                           ],
+                         ),
+                        //SizedBox(width:ScreenUtil().setWidth(172) ,),
+                        Row(
+                         // mainAxisAlignment: MainAxisAlignment.start,
+                         // crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            IconButton(
+                              onPressed: (){},
+                                icon: SvgPicture.asset(AppIcons.close)),
+                          ],
+                        ),
                       //  SizedBox(width:ScreenUtil().setWidth(18.06) ,),
                       ],
                     ),
-                    SizedBox(height: ScreenUtil().setHeight(154),),
+                    SizedBox(height:
+                   // ScreenUtil().setHeight(154),
+                   MediaQuery.of(context).size.height*0.144
+                    ),
                     Padding(
-                      padding: const EdgeInsets.only(right: 18.0),
+                      padding: const EdgeInsets.only(right: 18.0,left: 16),
                       child: InkWell(
                         onTap: (){Get.to(()=> BottomNavigatior());},
                         child: Row(
@@ -80,41 +108,47 @@ class _MainProfileState extends State<MainProfile> {
                         ),
                       ),
                     ),
-                    SizedBox(height: ScreenUtil().setHeight(44),),
+                    SizedBox(height: height*0.054
+                   // ScreenUtil().setHeight(44),
+                    ),
                     Padding(
-                      padding: const EdgeInsets.only(right: 18.0),
+                      padding: const EdgeInsets.only(right: 18.0,left: 16),
                       child: InkWell(
                         onTap: (){Get.to(()=> ProfileHobby());},
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(AppStrings.hobbiesText,style: AppTextStyle.text13,),
-                            //SizedBox(width:ScreenUtil().setWidth(172) ,),
+
                             SvgPicture.asset(AppIcons.circle),
-                            //  SizedBox(width:ScreenUtil().setWidth(18.06) ,),
+
                           ],
                         ),
                       ),
                     ),
-                    SizedBox(height: ScreenUtil().setHeight(54),),
+                    SizedBox(height:
+                        height*0.064
+                    //ScreenUtil().setHeight(54),
+                    ),
                     Padding(
-                      padding: const EdgeInsets.only(right: 18.0),
+                      padding: const EdgeInsets.only(right: 18.0,left: 16),
                       child: InkWell(
                         onTap: (){Get.to(()=>ProfileSearch());},
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(AppStrings.searchSettingsText,style: AppTextStyle.text13,),
-                           // SizedBox(width:ScreenUtil().setWidth(172) ,),
+
                             SvgPicture.asset(AppIcons.circle),
-                            //  SizedBox(width:ScreenUtil().setWidth(18.06) ,),
+
                           ],
                         ),
                       ),
                     ),
-                    SizedBox(height: ScreenUtil().setHeight(49),),
+                    const SizedBox(height:
+                    49),
                     Padding(
-                      padding: const EdgeInsets.only(right: 18.0),
+                      padding: const EdgeInsets.only(right: 18.0,left: 16),
                       child: InkWell(
                         onTap: (){Get.to(()=>ProfilePrivacy());},
                         child: Row(
@@ -134,8 +168,13 @@ class _MainProfileState extends State<MainProfile> {
                 ),
               ),
             ),
-            SizedBox(height: ScreenUtil().setHeight(121),),
-            Text(AppStrings.logoutText,style: AppTextStyle.logouttext,)
+            SizedBox(height:121
+              //ScreenUtil().setHeight(121),
+            ),
+            Text(AppStrings.logoutText,style: AppTextStyle.logouttext,),
+            SizedBox(height: 44
+              //ScreenUtil().setHeight(121),
+            ),
 
 
           ],

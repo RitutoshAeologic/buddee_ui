@@ -41,34 +41,37 @@ class _ProfileSelectHobbyState extends State<ProfileSelectHobby> {
       Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: ScreenUtil().setHeight(43),),
           Padding(
-            padding: const EdgeInsets.only(left: 18.0),
+            padding: const EdgeInsets.only(top: 35,bottom: 18,),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 //  SizedBox(width:ScreenUtil().setWidth(18.06) ,),
-                InkWell(
-                  onTap: (){Get.back();},
-                  child: SvgPicture.asset(AppIcons.backarrow,
-                    height: ScreenUtil().setHeight(15.86),
-                    width: ScreenUtil().setWidth(8.89),
+                IconButton(
+                  onPressed: (){Get.back();},
+                  icon: SvgPicture.asset(AppIcons.backarrow,
+                    height: 15.86,
+                    width: 8.89,
+
                     color: AppColors.backarrowsvg,
                   ),
                 ),
-                SizedBox(width:ScreenUtil().setWidth(30.06) ,),
-                Text(AppStrings.myprofileText,style: AppTextStyle.text13,),
+                //SizedBox(width:ScreenUtil().setWidth(30.06) ,),
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: Text(AppStrings.myprofileText,style: AppTextStyle.text13,),
+                ),
               ],
             ),
           ),
-          SizedBox(height: ScreenUtil().setHeight(28),),
+
           Center(child: Text(AppStrings.addHobbies,style: AppTextStyle.blueboldtext )),
-          SizedBox(height: ScreenUtil().setHeight(21),),
+
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 32.0),
+            padding: const EdgeInsets.only(left: 32.0,right: 32,top:21,bottom: 8 ),
             child: Text(AppStrings.searchText,style: AppTextStyle.text3 ),
           ),
-          SizedBox(height: ScreenUtil().setHeight(8),),
+
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 32.0),
             child: TextField(
@@ -81,6 +84,10 @@ class _ProfileSelectHobbyState extends State<ProfileSelectHobby> {
                   borderRadius: BorderRadius.circular(12.r),
                   borderSide: BorderSide(color: AppColors.textFieldColor, width: 2),
                 ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12.r),
+                  borderSide: BorderSide(color: AppColors.textFieldColor, width: 2),
+                ),
                 filled: true,
                 fillColor: AppColors.white,
                 hintText: AppStrings.searchTitle,
@@ -90,7 +97,7 @@ class _ProfileSelectHobbyState extends State<ProfileSelectHobby> {
               ),
             ),
           ),
-          SizedBox(height: ScreenUtil().setHeight(32),),
+          SizedBox(height: 32),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 32.0),
@@ -116,17 +123,9 @@ class _ProfileSelectHobbyState extends State<ProfileSelectHobby> {
                       backgroundColor: AppColors.white,
                       label:
                       Container(
-                        // height: ScreenUtil().setHeight(50),
+
                         padding: EdgeInsets.only(top: 5),
-                        // decoration: BoxDecoration(
-                        // borderRadius: BorderRadius.all(
-                        //   Radius.circular(15.0),
-                        //  ),
-                        // border: Border.all(
-                        //   color: AppColors.textblueColor,
-                        //   width: 1.5,
-                        // )
-                        // ),
+
                         width: MediaQuery.of(context).size.width,
                         child:
                         Text(myHobbies[index],textAlign: TextAlign.start ,style: AppTextStyle.text10,),
@@ -141,7 +140,7 @@ class _ProfileSelectHobbyState extends State<ProfileSelectHobby> {
                           isSelected = newBoolvalue;
                           tappedIndex = index;
                           temp.add(myHobbies[index]);
-                          Get.to(ProfileEditHobby());
+                          Get.to(()=>ProfileEditHobby());
 
                         });
                         // temp.add(myHobbies[index]);

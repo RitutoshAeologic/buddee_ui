@@ -37,34 +37,37 @@ class _ProfileEditHobbyState extends State<ProfileEditHobby> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: ScreenUtil().setHeight(43),),
             Padding(
-              padding: const EdgeInsets.only(left: 25.0),
+              padding: const EdgeInsets.only(top: 35,bottom: 17,),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   //  SizedBox(width:ScreenUtil().setWidth(18.06) ,),
-                  InkWell(
-                    onTap: (){Get.back();},
-                    child: SvgPicture.asset(AppIcons.backarrow,
-                      height: ScreenUtil().setHeight(15.86),
-                      width: ScreenUtil().setWidth(8.89),
+                  IconButton(
+                    onPressed: (){Get.back();},
+                    icon: SvgPicture.asset(AppIcons.backarrow,
+                      height: 15.86,
+                      //ScreenUtil().setHeight(15.86),
+                      width: 8.89,
+                      //ScreenUtil().setWidth(8.89),
                       color: AppColors.backarrowsvg,
                     ),
                   ),
-                  SizedBox(width:ScreenUtil().setWidth(30.06) ,),
-                  Text(AppStrings.myprofileText,style: AppTextStyle.text13,),
+                  //SizedBox(width:ScreenUtil().setWidth(30.06) ,),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: Text(AppStrings.myprofileText,style: AppTextStyle.text13,),
+                  ),
                 ],
               ),
             ),
-            SizedBox(height: ScreenUtil().setHeight(28),),
+
             Center(child: Text(AppStrings.editHobbies,style: AppTextStyle.blueboldtext )),
-            SizedBox(height: ScreenUtil().setHeight(29),),
+
             Padding(
-              padding: const EdgeInsets.only(left: 16.0),
+              padding: const EdgeInsets.only(left: 16.0,top: 29,bottom: 8),
               child: Text(AppStrings.discussText,style: AppTextStyle.lightbluetext ),
             ),
-            SizedBox(height: ScreenUtil().setHeight(8),),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: TextField(
@@ -78,9 +81,9 @@ class _ProfileEditHobbyState extends State<ProfileEditHobby> {
                     borderRadius: BorderRadius.circular(12.r),
                     borderSide: BorderSide(color: AppColors.lightgreyTextColor, width: 1),
                   ),
-                  disabledBorder: OutlineInputBorder(
+                  focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12.r),
-                    borderSide: BorderSide(color: AppColors.lightgreyTextColor, width: 1),
+                    borderSide: BorderSide(color: AppColors.textFieldColor, width: 2),
                   ),
                   filled: true,
                   fillColor: AppColors.white,
@@ -91,15 +94,16 @@ class _ProfileEditHobbyState extends State<ProfileEditHobby> {
                 ),
               ),
             ),
-            SizedBox(height: ScreenUtil().setHeight(24),),
+
             Padding(
-              padding: const EdgeInsets.only(right: 18.0,left: 16),
+              padding: const EdgeInsets.only(right: 18.0,left: 16,top: 24),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    height: ScreenUtil().setHeight(32),
-                    width: ScreenUtil().setWidth(152),
+                    padding:EdgeInsets.only(left: 9.0),
+                    height: 32,
+                    width: 152,
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         colors: [
@@ -112,24 +116,28 @@ class _ProfileEditHobbyState extends State<ProfileEditHobby> {
                       ),
 
                     ),
-                    child:Padding(
-                      padding: const EdgeInsets.only(left: 9,top:9),
-                      child: Text('Photography', style: AppTextStyle.text10,),
+                    child:Row(
+                      children: [
+                        Expanded(child: Text('Photography',
+                          overflow: TextOverflow.ellipsis,
+                          style: AppTextStyle.text10,)),
+                      ],
                     ),
                   ),
-                  IconButton(onPressed: (){}, icon: SvgPicture.asset(AppIcons.delete))
+                  IconButton(onPressed: (){}, icon: SvgPicture.asset(AppIcons.delete,
+                  height: 20,))
                 ],
               ),
             ),
-            SizedBox(height: ScreenUtil().setHeight(40),),
+            SizedBox(height: 40),
             Padding(
               padding: const EdgeInsets.only(left: 16.0),
               child: Text(AppStrings.addDescripText,style: AppTextStyle.text6,),
             ),
-            SizedBox(height: ScreenUtil().setHeight(8),),
+            SizedBox(height: 8),
             Container(
-              height: ScreenUtil().setHeight(153),
-              width: ScreenUtil().setWidth(343),
+              height: 153,
+              width: 343,
               margin: EdgeInsets.symmetric(horizontal: 16),
               child: TextField(
                 maxLines: 10,
@@ -142,6 +150,10 @@ class _ProfileEditHobbyState extends State<ProfileEditHobby> {
                     borderRadius: BorderRadius.circular(12.r),
                     borderSide: BorderSide(color: AppColors.lightgreyTextColor, width: 1),
                   ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12.r),
+                    borderSide: BorderSide(color: AppColors.textFieldColor, width: 2),
+                  ),
                   filled: true,
                   fillColor: AppColors.white,
                   hintText: 'Hobbies Description',
@@ -151,13 +163,14 @@ class _ProfileEditHobbyState extends State<ProfileEditHobby> {
               ),
             ),
 
-            SizedBox(height: ScreenUtil().setHeight(104),),
+            SizedBox(height:104),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 32.0),
               child: MaterialButtonBox(title: AppStrings.saveText, onTap: (){
                 Get.to(()=>ProfileSaveHobbyList());
               }),
-            )
+            ),
+            SizedBox(height: 36),
 
           ],
         ),
