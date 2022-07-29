@@ -29,6 +29,8 @@ class AppIcons {
   static const String thumbSlider    = 'assets/images/svg/thumbSlider.svg';
   static const String forwardarrow   = 'assets/images/svg/forwardarrow.svg';
   static const String menu           = 'assets/images/svg/applicationmenu.svg';
+  static const String cloud         = 'assets/images/svg/cloud.svg';
+  static const String premium          = 'assets/images/svg/premium.svg';
 
   ///JPG_IMAGES
   static const String onBoardbgjpg              = 'assets/images/jpg/Background.jpg';
@@ -40,5 +42,8 @@ class AppIcons {
   static const String myprofilebgjpg          = 'assets/images/jpg/myprofilebgimg.jpg';
   static const String thumbSliderimg            = 'assets/images/jpg/thumbSliderimg.png';
   static const String personpng                 = 'assets/images/jpg/person.png';
+  static const String explorebg          = 'assets/images/jpg/pana.jpg';
+  static const String cloudjpg         = 'assets/images/jpg/cloudjpg.jpg';
+  static const String premiumjpg          = 'assets/images/jpg/premiumjpg.jpg';
 
 }

@@ -77,7 +77,7 @@ class _EditHobbyDetailsState extends State<EditHobbyDetails> {
             ),
 
             Padding(
-              padding: const EdgeInsets.only(right: 18.0,left: 16,top: 24),
+              padding: const EdgeInsets.only(right: 8.0,left: 16,top: 24),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

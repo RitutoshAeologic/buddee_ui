@@ -17,6 +17,7 @@ import 'core/ui/added_hobby_list.dart';
 import 'core/ui/check_email.dart';
 import 'core/ui/edit_add_photo.dart';
 import 'core/ui/my_profile_list.dart';
+import 'core/ui/profile_explore.dart';
 import 'core/ui/profile_hobby.dart';
 
 
@@ -32,15 +33,15 @@ class MyApp extends StatelessWidget {
      return GetMaterialApp(
           debugShowCheckedModeBanner: false,
           useInheritedMediaQuery: true,
-          home: //MainMyProfile()
+          home: //ProfileExplore()
           //ProfileHobby()
 
-         OnBoardScreen(),
+       //OnBoardScreen(),
          // SignInScreen(),
         //SignUpAbout(),
           //AddHobbies(),
           //SignUp(),
-          //SaveHobbie(),
+         SaveHobbie(),
          //AddNewHobbie(),
           // AddedHobbies()
          // EditAddPhoto()

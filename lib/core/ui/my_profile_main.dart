@@ -28,7 +28,7 @@ class _MainMyProfileState extends State<MainMyProfile> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              height: MediaQuery.of(context).size.height*0.58,
+              height: MediaQuery.of(context).size.height*0.56,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                   image: DecorationImage(
@@ -132,6 +132,70 @@ class _MainMyProfileState extends State<MainMyProfile> {
       )
               ],
             )
+            ),
+            SizedBox(height: 16,),
+            Text(AppStrings.ucmyHobbies,style: AppTextStyle.text13,),
+            SizedBox(height: 21,),
+            ListView.builder(
+              physics: const NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: 3,
+              itemBuilder: (BuildContext context, int index){
+                return Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 17.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            padding: EdgeInsets.symmetric(vertical: 4.0,horizontal: 9.0),
+                            height: 32,
+                            width: 152,
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                colors: [
+                                  AppColors.genderbg1Color,
+                                  AppColors.genderbg2Color,
+                                ],
+                              ),
+                              borderRadius: const BorderRadius.all(
+                                Radius.circular(8.0),
+                              ),
+
+                            ),
+                            child:Center(
+                              child: Text('Badminton',
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                                style: AppTextStyle.text10,),
+                            ),
+                          ),
+
+
+                        ],
+                      ),
+                    ),
+
+                    SizedBox(height: 16),
+                    Container(
+                      margin: EdgeInsets.only(left: 18.0,right: 16),
+                      padding: EdgeInsets.only(left: 16,top: 16),
+                      height: 120,
+                      decoration: BoxDecoration(
+                        borderRadius: const BorderRadius.all(
+                          Radius.circular(8.0),
+                        ),
+                        color: Color.fromRGBO(94, 230, 255, 0.15)
+                      ),
+                      child: Text('Intermediate level, looking for a partner to play weekdays after work. Committed but not too serious',
+                        style: AppTextStyle.text6,),
+                    ),
+                    SizedBox(height:40,),
+                  ],
+                );
+              },
             ),
 
                       ],

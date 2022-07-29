@@ -33,6 +33,7 @@ class AppStrings {
   static const String addHobbies                       = 'Add hobbies';
   static const String editHobbies                       = 'Edit hobbies';
   static const String myHobbies                       = 'My hobbies';
+  static const String ucmyHobbies                       = 'My Hobbies';
   static const String searchText                       = 'Search';
   static const String searchSettingsText               = 'Search Settings';
   static const String searchTitle                      = 'Search for hobbies';
